@@ -1,19 +1,13 @@
 import type { NextPage } from 'next';
+import { HeroSection } from '../components/Home/components/HeroSection';
 import { Navbar } from '../components/Navbar';
 import { Container } from '../styles/Container';
-import { Grid } from '../styles/Grid';
 
 const Home: NextPage = () => {
   return (
     <Container>
       <Navbar />
-      <Grid>
-        <h2>Test</h2>
-        <h2>Test</h2>
-        <h2>Test</h2>
-        <h2>Test</h2>
-        <h2>Test</h2>
-      </Grid>
+      <HeroSection />
     </Container>
   );
 };

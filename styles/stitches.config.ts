@@ -3,13 +3,12 @@ import { createStitches } from "@stitches/react";
 import { globalCss } from "@stitches/react";
 
 const globalStyles = globalCss({
-  '*': { margin: 0, padding: 0, boxSizing: 'border-box' },
   '@import': ["url('https://fonts.googleapis.com/css2?family=Syne&family=Unica+One&display=swap')"]
 });
 
 globalStyles();
 
-export const { styled, css } = createStitches({
+export const { styled, theme, css } = createStitches({
   theme: {
     colors: {
       blue500: '#3AB8EB',
@@ -39,12 +38,12 @@ export const { styled, css } = createStitches({
     borderStyles: {
       dash: 'dotted',
     },
-    media: {
-      sm: '(min-width: 576px)',
-      md: '(min-width: 768px)',
-      lg: '(min-width: 992px)',
-      xl: '(min-width: 1200px)',
-      xxl: '(min-width: 1400px)',
-    },
-  }
+  },
+  media: {
+    sm: '(min-width: 576px)',
+    md: '(min-width: 768px)',
+    lg: '(min-width: 992px)',
+    xl: '(min-width: 1200px)',
+    xxl: '(min-width: 1400px)',
+  },
 })

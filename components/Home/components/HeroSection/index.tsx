@@ -3,6 +3,10 @@ import { Box } from '../../../../styles/Box';
 import { styled } from '../../../../styles/stitches.config';
 import { TextSmall } from '../../../../styles/Texts/TextSmall';
 import { TitleH1 } from '../../../../styles/Titles/TitleH1';
+import { ButtonLink } from '../../../ButtonLink';
+import { InputSearch } from '../../../InputSearch';
+
+import { Binoculars } from 'phosphor-react';
 
 export const HeroSection = () => {
   const HeroHeader = styled('div', {
@@ -80,6 +84,13 @@ export const HeroSection = () => {
         </TitleH1>
 
         <TextSmall>Explore our catalog and find your next read.</TextSmall>
+
+        <InputSearch />
+
+        <ButtonLink href="/" color="yellow">
+          Explore
+          <Binoculars size={32} weight="light" />
+        </ButtonLink>
       </HeroHeader>
 
       <HeroImage>

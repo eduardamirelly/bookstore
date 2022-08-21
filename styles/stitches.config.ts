@@ -36,7 +36,7 @@ export const { styled, theme, css } = createStitches({
       bw2: '2px',
     },
     borderStyles: {
-      dash: 'dotted',
+      dash: 'dashed',
     },
   },
   media: {

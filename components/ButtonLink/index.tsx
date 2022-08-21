@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { RectButton } from '../../styles/RectButton';
+import { RectButton } from '../../styles/RectButtonLink';
 
 interface ButtonLinkProps {
   href: string;

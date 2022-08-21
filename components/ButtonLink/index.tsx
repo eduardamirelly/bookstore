@@ -14,19 +14,17 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
 }) => {
   return (
     <Link href={href}>
-      <a>
-        <RectButton
-          color={color}
-          fontSize="small"
-          borderRadius="small"
-          css={{
-            width: '153px',
-            height: '51px',
-          }}
-        >
-          {children}
-        </RectButton>
-      </a>
+      <RectButton
+        color={color}
+        fontSize="small"
+        borderRadius="small"
+        css={{
+          width: '153px',
+          height: '51px',
+        }}
+      >
+        {children}
+      </RectButton>
     </Link>
   );
 };

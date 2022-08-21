@@ -85,7 +85,7 @@ export const HeroSection = () => {
 
         <TextSmall>Explore our catalog and find your next read.</TextSmall>
 
-        <InputSearch />
+        {/* <InputSearch /> */}
 
         <ButtonLink href="/" color="yellow">
           Explore

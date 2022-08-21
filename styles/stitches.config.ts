@@ -40,6 +40,7 @@ export const { styled, theme, css } = createStitches({
     },
   },
   media: {
+    xs: '(min-width: 450px)',
     sm: '(min-width: 576px)',
     md: '(min-width: 768px)',
     lg: '(min-width: 992px)',

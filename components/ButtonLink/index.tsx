@@ -19,8 +19,10 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
         fontSize="small"
         borderRadius="small"
         css={{
-          width: '153px',
           height: '51px',
+          '@sm': {
+            width: '153px',
+          },
         }}
       >
         {children}

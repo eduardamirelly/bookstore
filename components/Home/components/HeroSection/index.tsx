@@ -11,12 +11,16 @@ import { Binoculars } from 'phosphor-react';
 export const HeroSection = () => {
   const HeroHeader = styled('div', {
     color: '$gray800',
-    maxWidth: '535px',
+    width: '100%',
+
+    '@lg': {
+      maxWidth: '535px',
+    },
   });
 
   const HeroImage = styled('div', {
-    width: '530px',
-    maxHeight: '550px',
+    width: '485px',
+    maxHeight: '503px',
     position: 'relative',
 
     '&:before': {
@@ -44,14 +48,14 @@ export const HeroSection = () => {
   const GifBox = styled('span', {
     position: 'absolute',
 
-    '@sm': {
+    '@xl': {
       right: '45px',
       bottom: '-60px',
     },
 
     img: {
       width: '60px',
-      '@sm': {
+      '@xl': {
         width: '141px',
       },
     },
@@ -61,7 +65,7 @@ export const HeroSection = () => {
     <Box
       css={{
         alignItems: 'center',
-        marginTop: '50px',
+        marginTop: '40px',
         gap: '30px',
         justifyContent: 'space-between',
         flexWrap: 'wrap',
@@ -75,6 +79,7 @@ export const HeroSection = () => {
         <TitleH1
           css={{
             position: 'relative',
+            maxWidth: '535px',
           }}
         >
           What book you looking for?
@@ -85,7 +90,7 @@ export const HeroSection = () => {
 
         <TextSmall>Explore our catalog and find your next read.</TextSmall>
 
-        {/* <InputSearch /> */}
+        <InputSearch />
 
         <ButtonLink href="/" color="yellow">
           Explore
@@ -96,8 +101,8 @@ export const HeroSection = () => {
       <HeroImage>
         <Image
           src="/assets/book-store-img.jpg"
-          width={530}
-          height={550}
+          width={485}
+          height={503}
           alt=""
           layout="responsive"
           objectFit="cover"

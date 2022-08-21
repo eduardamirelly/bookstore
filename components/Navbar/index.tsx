@@ -16,7 +16,7 @@ export const Navbar = () => {
     flex: '1',
     display: 'flex',
     justifyContent: 'flex-end',
-    gap: '24px',
+    gap: '25px',
   });
 
   return (

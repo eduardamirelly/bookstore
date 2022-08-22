@@ -12,12 +12,27 @@ export const InputSearch = () => {
     marginBottom: '1.5rem',
 
     minWidth: '100%',
+    height: '42px',
+    position: 'relative',
 
     '@xl': {
-      width: '535px',
+      width: '530px',
     },
     '@md': {
       minWidth: '80%',
+    },
+
+    '&:after': {
+      content: '',
+      width: '100%',
+      height: '100%',
+
+      backgroundColor: '$yellow500',
+      position: 'absolute',
+
+      borderRadius: '20px',
+      marginTop: '-38px',
+      marginLeft: '-46px',
     },
   });
 

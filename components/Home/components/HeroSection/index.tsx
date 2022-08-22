@@ -106,7 +106,7 @@ export const HeroSection = () => {
           alt=""
           layout="responsive"
           objectFit="cover"
-          priority
+          // priority
         />
       </HeroImage>
     </Box>

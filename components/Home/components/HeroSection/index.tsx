@@ -67,7 +67,7 @@ export const HeroSection = () => {
         alignItems: 'center',
         marginTop: '40px',
         gap: '30px',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         flexWrap: 'wrap',
 
         '@lg': {

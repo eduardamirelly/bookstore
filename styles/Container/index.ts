@@ -5,11 +5,11 @@ export const Container = styled('div', theme, {
   minHeight: '100vh',
   margin: '0 1rem',
 
-  '@md': {
-    margin: '0 5.625rem',
+  '@lg': {
+    margin: '0 auto',
   },
   '@sm': {
-    margin: '0 3rem',
+    margin: '0 2rem',
   },
 
   fontFamily: '$primary',

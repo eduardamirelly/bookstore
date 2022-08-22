@@ -1,66 +1,14 @@
 import Image from 'next/image';
 import { Box } from '../../../../styles/Box';
-import { styled } from '../../../../styles/stitches.config';
 import { TextSmall } from '../../../../styles/Texts/TextSmall';
 import { TitleH1 } from '../../../../styles/Titles/TitleH1';
 import { ButtonLink } from '../../../ButtonLink';
 import { InputSearch } from '../../../InputSearch';
 
 import { Binoculars } from 'phosphor-react';
+import { GifBox, HeroHeader, HeroImage } from './styles';
 
 export const HeroSection = () => {
-  const HeroHeader = styled('div', {
-    color: '$gray800',
-    width: '100%',
-
-    '@lg': {
-      maxWidth: '535px',
-    },
-  });
-
-  const HeroImage = styled('div', {
-    width: '485px',
-    maxHeight: '503px',
-    position: 'relative',
-
-    '&:before': {
-      content: '',
-      width: '100%',
-      height: '100%',
-
-      backgroundColor: '$blue500',
-      position: 'absolute',
-
-      borderTopRightRadius: '20px',
-      borderBottomLeftRadius: '20px',
-
-      marginTop: '-38px',
-      marginLeft: '-46px',
-    },
-
-    display: 'none',
-
-    '@lg': {
-      display: 'block',
-    },
-  });
-
-  const GifBox = styled('span', {
-    position: 'absolute',
-
-    '@xl': {
-      right: '45px',
-      bottom: '-60px',
-    },
-
-    img: {
-      width: '60px',
-      '@xl': {
-        width: '141px',
-      },
-    },
-  });
-
   return (
     <Box
       css={{

@@ -11,9 +11,10 @@ body {
   width: 100%;
 }
 
-#__next {
-}
-
 a {
   text-decoration: none;
+}
+
+input {
+  outline: none;
 }

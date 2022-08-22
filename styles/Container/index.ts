@@ -3,13 +3,10 @@ import { styled, theme } from "../stitches.config";
 export const Container = styled('div', theme, {
   maxWidth: '1440px',
   minHeight: '100vh',
-  margin: '0 1rem',
+  margin: '0 1.5rem',
 
-  '@lg': {
+  '@xxl': {
     margin: '0 auto',
-  },
-  '@sm': {
-    margin: '0 2rem',
   },
 
   fontFamily: '$primary',

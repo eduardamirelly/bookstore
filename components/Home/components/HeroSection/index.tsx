@@ -40,7 +40,12 @@ export const HeroSection = () => {
 
         <InputSearch />
 
-        <ButtonLink href="/" color="yellow">
+        <ButtonLink
+          href="/"
+          color="yellow"
+          fontSize="small"
+          borderRadius="small"
+        >
           Explore
           <Binoculars size={32} weight="light" />
         </ButtonLink>

@@ -5,6 +5,7 @@ export const TitleH1 = styled('h1', {
   fontSize: '$36',
   fontWeight: '400',
   marginBottom: '1.5rem',
+  color: '$gray800',
 
   '@xs': {
     fontSize: '$64',

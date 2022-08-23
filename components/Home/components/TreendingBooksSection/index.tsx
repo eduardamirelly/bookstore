@@ -10,7 +10,11 @@ export const TreendingBooksSection = () => {
       css={{
         alignItems: 'center',
         flexDirection: 'column',
-        marginTop: '220px',
+        marginTop: '150px',
+
+        '@lg': {
+          marginTop: '220px',
+        },
       }}
     >
       <TitleH2>Treending Books</TitleH2>

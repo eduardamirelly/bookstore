@@ -26,6 +26,6 @@ export const BannerDash = styled('div', {
     borderRadius: '20px',
     top: '20px',
     left: '20px ',
-    zIndex: '-1',
+    zIndex: '-10',
   },
 });

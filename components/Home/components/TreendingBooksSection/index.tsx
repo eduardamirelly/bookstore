@@ -2,6 +2,7 @@ import { Sparkle } from 'phosphor-react';
 import { Box } from '../../../../styles/Box';
 import { TextXSmall } from '../../../../styles/Texts/TextXSmall';
 import { TitleH2 } from '../../../../styles/Titles/TitleH2';
+import { BookCover } from '../../../BookCover';
 import { BannerDash } from './styles';
 
 export const TreendingBooksSection = () => {
@@ -30,7 +31,9 @@ export const TreendingBooksSection = () => {
         Scroll to explore
       </TextXSmall>
 
-      <BannerDash>Texto</BannerDash>
+      <BannerDash>
+        <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
+      </BannerDash>
     </Box>
   );
 };

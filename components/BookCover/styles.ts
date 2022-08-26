@@ -1,7 +1,7 @@
 import { styled } from "../../styles/stitches.config";
 
 export const BookCoverStyle = styled('div', {
-  width: '200px',
+  minWidth: '200px',
   height: '298px',
 
   position: 'relative',

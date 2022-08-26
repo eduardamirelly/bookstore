@@ -2,7 +2,7 @@ import { styled } from "../../../../styles/stitches.config";
 
 export const BannerDash = styled('div', {
   width: '100%',
-  paddingBlock: '40px',
+  paddingBlock: '60px',
 
   backgroundColor: 'white',
   border: '2px dashed $gray800',
@@ -11,6 +11,8 @@ export const BannerDash = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+
+  gap: '52px',
 
   position: 'relative',
   marginTop: '36px',

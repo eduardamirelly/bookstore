@@ -45,6 +45,12 @@ export const HeroSection = () => {
           color="yellow"
           fontSize="small"
           borderRadius="small"
+          css={{
+            height: '51px',
+            '@sm': {
+              width: '153px',
+            },
+          }}
         >
           Explore
           <Binoculars size={32} weight="light" />

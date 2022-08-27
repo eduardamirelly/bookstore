@@ -16,6 +16,8 @@ export const RectButton = styled('a', {
 
   transition: 'background-color .2s',
 
+  position: 'relative',
+
   variants: {
     color: {
       yellow: {
@@ -30,6 +32,22 @@ export const RectButton = styled('a', {
 
         '&:hover': {
           backgroundColor: '$yellow500',
+        },
+      },
+    },
+    backgroundColorHover: {
+      yellow: {
+        backgroundColor: 'white',
+
+        '&:hover': {
+          backgroundColor: '$yellow500',
+        },
+      },
+      orange: {
+        backgroundColor: 'white',
+
+        '&:hover': {
+          backgroundColor: '$orange500',
         },
       },
     },
@@ -48,6 +66,23 @@ export const RectButton = styled('a', {
       medium: {
         borderRadius: '20px',
       },
+    },
+    beforeShadow: {
+      orange: {
+        '&:before': {
+          content: '',
+          width: '100%',
+          height: '100%',
+
+          backgroundColor: '$orange500',
+          position: 'absolute',
+
+          borderRadius: '10px',
+          top: '15px',
+          left: '15px ',
+          zIndex: '-1',
+        },
+      }
     },
   }
 });

@@ -9,6 +9,7 @@ export const BookBuy = () => {
     <Box
       css={{
         flexDirection: 'column',
+        maxWidth: '200px',
       }}
     >
       <Box>

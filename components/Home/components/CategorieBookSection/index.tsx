@@ -2,6 +2,7 @@ import { Path } from 'phosphor-react';
 import React from 'react';
 import { Box } from '../../../../styles/Box';
 import { TitleH2 } from '../../../../styles/Titles/TitleH2';
+import { Arrow } from '../../../Arrow';
 import { BookBuy } from '../../../BookBuy';
 
 interface CategorieBookProps {
@@ -21,17 +22,35 @@ export const CategorieBookSection: React.FC<CategorieBookProps> = ({
         gap: '36px',
       }}
     >
-      <TitleH2
+      <Box
         css={{
-          display: 'flex',
+          width: '100%',
+          justifyContent: 'space-between',
           alignItems: 'center',
-          gap: '8px',
-          alignSelf: 'flex-start',
         }}
       >
-        <Path size={36} weight="regular" />
-        {categorie}
-      </TitleH2>
+        <TitleH2
+          css={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            alignSelf: 'flex-start',
+          }}
+        >
+          <Path size={36} weight="regular" />
+          {categorie}
+        </TitleH2>
+
+        <Box
+          css={{
+            alignItems: 'center',
+            gap: '10px',
+          }}
+        >
+          <Arrow isRight={false} />
+          <Arrow isRight={true} />
+        </Box>
+      </Box>
 
       <Box
         css={{

@@ -18,7 +18,7 @@ export const TreendingBooksSection = () => {
         },
       }}
     >
-      <TitleH2>Treending Books</TitleH2>
+      <TitleH2 css={{ marginBottom: '1rem' }}>Treending Books</TitleH2>
 
       <TextXSmall
         css={{

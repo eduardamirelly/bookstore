@@ -35,6 +35,16 @@ export const RectButton = styled('a', {
         },
       },
     },
+    colorText: {
+      gray800: {
+        color: '$gray800',
+        borderColor: '$gray800',
+      },
+      gray600: {
+        color: '$gray600',
+        borderColor: '$gray600',
+      },
+    },
     backgroundColorHover: {
       yellow: {
         backgroundColor: 'white',
@@ -66,6 +76,9 @@ export const RectButton = styled('a', {
       medium: {
         borderRadius: '20px',
       },
+      full: {
+        borderRadius: '50%',
+      }
     },
     beforeShadow: {
       orange: {
@@ -82,7 +95,22 @@ export const RectButton = styled('a', {
           left: '15px ',
           zIndex: '-1',
         },
-      }
+      },
+      blue: {
+        '&:before': {
+          content: '',
+          width: '100%',
+          height: '100%',
+
+          backgroundColor: '$blue500',
+          position: 'absolute',
+
+          borderRadius: '50%',
+          top: '8px',
+          left: '5px ',
+          zIndex: '-1',
+        },
+      },
     },
   }
 });

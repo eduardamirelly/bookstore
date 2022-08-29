@@ -5,10 +5,11 @@ import { RectButton } from '../../styles/RectButtonLink';
 interface ButtonLinkProps {
   href: string;
   color?: 'yellow' | 'orange';
-  fontSize: 'small' | 'large';
-  borderRadius: 'small' | 'medium';
+  colorText?: 'gray800' | 'gray600';
+  fontSize?: 'small' | 'large';
+  borderRadius: 'small' | 'medium' | 'full';
   backgroundColorHover?: 'orange' | 'yellow';
-  beforeShadow?: 'orange';
+  beforeShadow?: 'orange' | 'blue';
   css?: Stitches.CSS;
   children?: React.ReactNode;
 }
@@ -16,6 +17,7 @@ interface ButtonLinkProps {
 export const ButtonLink: React.FC<ButtonLinkProps> = ({
   href,
   color,
+  colorText,
   fontSize,
   borderRadius,
   backgroundColorHover,
@@ -27,6 +29,7 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
     <Link href={href}>
       <RectButton
         color={color}
+        colorText={colorText}
         fontSize={fontSize}
         borderRadius={borderRadius}
         backgroundColorHover={backgroundColorHover}

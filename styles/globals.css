@@ -18,3 +18,7 @@ a {
 input {
   outline: none;
 }
+
+button {
+  background-color: white;
+}

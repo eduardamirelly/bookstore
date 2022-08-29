@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import { Footer } from '../components/Footer';
-import { CategorieBookSection } from '../components/Home/components/CategorieBookSection';
 import { CategoriesSection } from '../components/Home/components/CategoriesSection';
+import { CategoryBookSection } from '../components/Home/components/CategoryBookSection';
 import { HeroSection } from '../components/Home/components/HeroSection';
 import { TreendingBooksSection } from '../components/Home/components/TreendingBooksSection';
 import { Navbar } from '../components/Navbar';
@@ -14,8 +14,8 @@ const Home: NextPage = () => {
       <HeroSection />
       <TreendingBooksSection />
       <CategoriesSection />
-      <CategorieBookSection categorie="Romance" />
-      <CategorieBookSection categorie="Adventure" />
+      <CategoryBookSection category="Romance" />
+      <CategoryBookSection category="Adventure" />
       <Footer />
     </Container>
   );

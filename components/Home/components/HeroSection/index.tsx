@@ -7,6 +7,7 @@ import { InputSearch } from '../../../InputSearch';
 
 import { Binoculars } from 'phosphor-react';
 import { GifBox, HeroHeader, HeroImage } from './styles';
+import { DashLine } from '../../../../styles/DashLine';
 
 export const HeroSection = () => {
   return (
@@ -38,23 +39,52 @@ export const HeroSection = () => {
 
         <TextSmall>Explore our catalog and find your next read.</TextSmall>
 
-        <InputSearch />
-
-        <ButtonLink
-          href="/"
-          color="yellow"
-          fontSize="small"
-          borderRadius="small"
+        <Box
           css={{
-            height: '51px',
-            '@sm': {
-              width: '153px',
-            },
+            flexDirection: 'column',
           }}
         >
-          Explore
-          <Binoculars size={32} weight="light" />
-        </ButtonLink>
+          <InputSearch />
+
+          <Box
+            css={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '20px',
+              flexWrap: 'wrap',
+
+              '@lg': {
+                maxWidth: '490px',
+              },
+              '@md': {
+                maxWidth: '90%',
+              },
+              '@xs': {
+                flexWrap: 'nowrap',
+              },
+            }}
+          >
+            <ButtonLink
+              href="/"
+              color="yellow"
+              fontSize="small"
+              borderRadius="small"
+              css={{
+                height: '51px',
+                width: '100%',
+
+                '@xs': {
+                  width: '153px',
+                },
+              }}
+            >
+              Explore
+              <Binoculars size={32} weight="light" />
+            </ButtonLink>
+
+            <DashLine />
+          </Box>
+        </Box>
       </HeroHeader>
 
       <HeroImage>

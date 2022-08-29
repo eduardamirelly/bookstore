@@ -1,7 +1,10 @@
 import { Box } from '../../styles/Box';
+import { TextExtraLarge } from '../../styles/Texts/TextExtraLarge';
 import { TitleH2 } from '../../styles/Titles/TitleH2';
 import { BookCover } from '../BookCover';
 import { BookMark } from '../BookMark';
+import { BuyButton } from '../BuyButton';
+import { BuyNowButton } from '../BuyNowButton';
 import { LabelInfo } from './components/LabelInfo';
 
 export const BookDetail = () => {
@@ -17,7 +20,6 @@ export const BookDetail = () => {
         '@lg': {
           gap: '138px',
           flexDirection: 'row',
-          alignItems: 'flex-start',
         },
       }}
     >
@@ -34,10 +36,13 @@ export const BookDetail = () => {
           css={{
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: '50px',
+            gap: '30px',
+
+            flexDirection: 'column',
 
             '@lg': {
               gap: '100px',
+              flexDirection: 'row',
             },
           }}
         >
@@ -52,7 +57,21 @@ export const BookDetail = () => {
           >
             A Hipótese do Amor
           </TitleH2>
-          <BookMark />
+
+          <Box css={{ gap: '20px' }}>
+            <BookMark />
+
+            <BuyButton
+              css={{
+                minWidth: '57px',
+                height: '48px',
+
+                '@lg': {
+                  display: 'none',
+                },
+              }}
+            />
+          </Box>
         </Box>
 
         <LabelInfo>Author (a): Name Author</LabelInfo>
@@ -65,14 +84,34 @@ export const BookDetail = () => {
           nostra, per inceptos himenaeos.
         </LabelInfo>
 
-        <Box>
-          <span>Price</span>
+        <Box
+          css={{
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '50px',
+
+            marginTop: '50px',
+
+            '@lg': {
+              gap: '100px',
+            },
+          }}
+        >
+          <TextExtraLarge css={{ color: '$orange500' }}>$30.00</TextExtraLarge>
           <span>Count</span>
         </Box>
 
-        <Box>
-          <span>Shopping Cart</span>
-          <span>Buy Now</span>
+        <Box
+          css={{
+            gap: '18px',
+            marginTop: '20px',
+            flexWrap: 'wrap-reverse',
+
+            '@md': { flexWrap: 'nowrap' },
+          }}
+        >
+          <BuyButton />
+          <BuyNowButton />
         </Box>
       </Box>
     </Box>

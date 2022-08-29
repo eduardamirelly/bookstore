@@ -1,7 +1,7 @@
 import type * as Stitches from '@stitches/react';
 import Link from 'next/link';
 import React from 'react';
-import { RectButton } from '../../styles/RectButtonLink';
+import { RectButton } from '../../styles/RectButton';
 
 interface ButtonLinkProps {
   href: string;

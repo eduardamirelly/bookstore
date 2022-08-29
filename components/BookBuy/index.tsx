@@ -21,7 +21,7 @@ export const BookBuy = () => {
           alignItems: 'center',
           justifyContent: 'space-between',
 
-          marginTop: '10px',
+          marginBlock: '10px',
         }}
       >
         <LabelPrice price="30.00" />

@@ -32,6 +32,7 @@ export const CategoriesSection = () => {
 
       <Box
         css={{
+          width: '100%',
           justifyContent: 'space-between',
           alignItems: 'center',
           gap: '50px',
@@ -51,6 +52,8 @@ export const CategoriesSection = () => {
           css={{
             height: '80px',
             width: '100%',
+            paddingInline: '1rem',
+            paddingBlock: '1.5rem',
 
             '@md': {
               width: '388px',
@@ -69,6 +72,8 @@ export const CategoriesSection = () => {
           css={{
             height: '80px',
             width: '100%',
+            paddingInline: '1rem',
+            paddingBlock: '1.5rem',
 
             '@md': {
               width: '388px',
@@ -87,6 +92,8 @@ export const CategoriesSection = () => {
           css={{
             height: '80px',
             width: '100%',
+            paddingInline: '1rem',
+            paddingBlock: '1.5rem',
 
             '@md': {
               width: '388px',
@@ -119,6 +126,8 @@ export const CategoriesSection = () => {
           css={{
             height: '80px',
             width: '100%',
+            paddingInline: '1rem',
+            paddingBlock: '1.5rem',
 
             '@md': {
               width: '388px',
@@ -137,6 +146,8 @@ export const CategoriesSection = () => {
           css={{
             height: '80px',
             width: '100%',
+            paddingInline: '1rem',
+            paddingBlock: '1.5rem',
 
             '@md': {
               width: '388px',
@@ -155,6 +166,8 @@ export const CategoriesSection = () => {
           css={{
             height: '80px',
             width: '100%',
+            paddingInline: '1rem',
+            paddingBlock: '1.5rem',
 
             '@md': {
               width: '388px',

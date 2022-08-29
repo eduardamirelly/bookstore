@@ -73,6 +73,9 @@ export const HeroSection = () => {
                 height: '51px',
                 width: '100%',
 
+                paddingInline: '1rem',
+                paddingBlock: '1.5rem',
+
                 '@xs': {
                   width: '153px',
                 },

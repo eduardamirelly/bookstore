@@ -32,7 +32,6 @@ export const CategoriesSection = () => {
 
       <Box
         css={{
-          width: '100%',
           justifyContent: 'space-between',
           alignItems: 'center',
           gap: '50px',

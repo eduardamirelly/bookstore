@@ -11,7 +11,7 @@ const Book: NextPage = () => {
       <Container>
         <Navbar />
         <BookDetail />
-        <CategoryBookSection category="View More" />
+        {/* <CategoryBookSection category="View More" /> */}
         <Footer />
       </Container>
     </>

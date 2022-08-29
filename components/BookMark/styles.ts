@@ -1,7 +1,7 @@
 import { styled } from "../../styles/stitches.config";
 
 export const MarkStyle = styled('button', {
-  width: '57px',
+  minWidth: '57px',
   height: '46px',
 
   color: '$gray800',

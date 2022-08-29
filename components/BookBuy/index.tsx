@@ -2,7 +2,7 @@ import { Box } from '../../styles/Box';
 import { BookCover } from '../BookCover';
 import { BuyButton } from '../BuyButton';
 import { LabelPrice } from './components/LabelPrice';
-import { MarkBook } from './components/MarkBook';
+import { BookMark } from './components/BookMark';
 
 export const BookBuy = () => {
   return (
@@ -24,7 +24,7 @@ export const BookBuy = () => {
         }}
       >
         <LabelPrice price="30.00" />
-        <MarkBook />
+        <BookMark />
       </Box>
 
       <BuyButton />

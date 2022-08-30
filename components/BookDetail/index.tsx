@@ -5,6 +5,7 @@ import { BookCover } from '../BookCover';
 import { BookMark } from '../BookMark';
 import { BuyButton } from '../BuyButton';
 import { BuyNowButton } from '../BuyNowButton';
+import { CountBooks } from '../CountBooks';
 import { LabelInfo } from './components/LabelInfo';
 
 export const BookDetail = () => {
@@ -98,7 +99,7 @@ export const BookDetail = () => {
           }}
         >
           <TextExtraLarge css={{ color: '$orange500' }}>$30.00</TextExtraLarge>
-          <span>Count</span>
+          <CountBooks />
         </Box>
 
         <Box

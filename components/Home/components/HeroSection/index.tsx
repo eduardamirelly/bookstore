@@ -65,7 +65,7 @@ export const HeroSection = () => {
             }}
           >
             <ButtonLink
-              href="/"
+              href="/catalog"
               color="yellow"
               fontSize="small"
               borderRadius="small"

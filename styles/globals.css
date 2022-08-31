@@ -22,3 +22,23 @@ input {
 button {
   background-color: white;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(253, 191, 15, .85);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(58, 184, 235, .85);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(249, 120, 75, .85);
+}

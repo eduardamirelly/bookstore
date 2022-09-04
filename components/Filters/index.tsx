@@ -1,9 +1,9 @@
+import { CaretDown } from 'phosphor-react';
 import { Box } from '../../styles/Box';
 import { DashLine } from '../../styles/DashLine';
-import { OptionStyle } from '../../styles/OptionStyle';
-import { SelectStyle } from '../../styles/SelectStyle';
 import { styled } from '../../styles/stitches.config';
 import { TextLarge } from '../../styles/Texts/TextLarge';
+import { SelectInput } from './components/SelectInput';
 
 export const Filters = () => {
   const TextBlueResult = styled('span', {
@@ -23,11 +23,12 @@ export const Filters = () => {
           alignItems: 'center',
           justifyContent: 'space-between',
           marginBottom: '30px',
-          gap: '50px',
+          gap: '40px',
 
           flexDirection: 'column',
 
-          '@md': {
+          '@lg': {
+            gap: '20px',
             flexDirection: 'row',
           },
         }}
@@ -36,14 +37,19 @@ export const Filters = () => {
           Results "<TextBlueResult>Name book or name author</TextBlueResult>"
         </TextLarge>
 
-        <Box css={{ gap: '17px' }}>
-          <SelectStyle>
-            <OptionStyle value="">Texto</OptionStyle>
-          </SelectStyle>
+        <Box
+          css={{
+            gap: '17px',
+            flexWrap: 'wrap',
+            justifyContent: 'flex-end',
 
-          <SelectStyle>
-            <OptionStyle value="">Texto</OptionStyle>
-          </SelectStyle>
+            '@lg': {
+              flexWrap: 'nowrap',
+            },
+          }}
+        >
+          <SelectInput selectInitial="Categories" css={{ width: '308px' }} />
+          <SelectInput selectInitial="Filter By" css={{ width: '168px' }} />
         </Box>
       </Box>
 

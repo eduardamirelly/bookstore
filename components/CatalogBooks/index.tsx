@@ -33,10 +33,10 @@ export const CatalogBooks = () => {
         }}
       >
         <BookBuy />
+        {/* <BookBuy />
         <BookBuy />
         <BookBuy />
-        <BookBuy />
-        <BookBuy />
+        <BookBuy /> */}
       </Box>
     </Box>
   );

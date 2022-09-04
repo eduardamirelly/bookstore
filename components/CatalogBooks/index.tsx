@@ -3,7 +3,11 @@ import { BookBuy } from '../BookBuy';
 import { Filters } from '../Filters';
 import { InputSearch } from '../InputSearch';
 
-export const CatalogBooks = () => {
+interface CatalogBooksProps {
+  isFavorites: boolean;
+}
+
+export const CatalogBooks: React.FC<CatalogBooksProps> = ({ isFavorites }) => {
   return (
     <Box
       css={{
@@ -32,11 +36,7 @@ export const CatalogBooks = () => {
           marginTop: '70px',
         }}
       >
-        <BookBuy />
-        {/* <BookBuy />
-        <BookBuy />
-        <BookBuy />
-        <BookBuy /> */}
+        {isFavorites ? <h1>Livros favoritados</h1> : <BookBuy />}
       </Box>
     </Box>
   );

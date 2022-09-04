@@ -4,16 +4,16 @@ import { Footer } from '../../components/Footer';
 import { Navbar } from '../../components/Navbar';
 import { Container } from '../../styles/Container';
 
-const Catalog: NextPage = () => {
+const Favorites: NextPage = () => {
   return (
     <>
       <Container>
         <Navbar />
-        <CatalogBooks isFavorites={false} />
+        <CatalogBooks isFavorites={true} />
         <Footer />
       </Container>
     </>
   );
 };
 
-export default Catalog;
+export default Favorites;

@@ -7,7 +7,7 @@ interface ButtonLinkProps {
   href: string;
   color?: 'yellow' | 'orange';
   colorText?: 'gray800' | 'gray600';
-  fontSize?: 'small' | 'large';
+  fontSize?: 'small' | 'medium' | 'large';
   borderRadius: 'small' | 'medium' | 'full';
   backgroundColorHover?: 'orange' | 'yellow';
   beforeShadow?: 'orange' | 'blue';

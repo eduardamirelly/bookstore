@@ -1,5 +1,6 @@
 import { Box } from '../../styles/Box';
 import { BookBuy } from '../BookBuy';
+import { BookFavorite } from '../BookFavorite';
 import { Filters } from '../Filters';
 import { InputSearch } from '../InputSearch';
 
@@ -36,7 +37,7 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({ isFavorites }) => {
           marginTop: '70px',
         }}
       >
-        {isFavorites ? <h1>Livros favoritados</h1> : <BookBuy />}
+        {isFavorites ? <BookFavorite /> : <BookBuy />}
       </Box>
     </Box>
   );

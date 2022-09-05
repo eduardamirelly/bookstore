@@ -66,10 +66,10 @@ export const CategoryBookSection: React.FC<CategoryBookProps> = ({
         }}
       >
         <BookBuy />
+        {/* <BookBuy />
         <BookBuy />
         <BookBuy />
-        <BookBuy />
-        <BookBuy />
+        <BookBuy /> */}
       </Box>
     </Box>
   );

@@ -33,10 +33,10 @@ export const TreendingBooksSection = () => {
 
       <BannerDash>
         <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
+        {/* <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
         <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
         <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
-        <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
-        <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
+        <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" /> */}
       </BannerDash>
     </Box>
   );

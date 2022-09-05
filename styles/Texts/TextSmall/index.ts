@@ -8,5 +8,9 @@ export const TextSmall = styled('p', {
 
   '@md': {
     fontSize: '$16',
-  }
+  },
+
+  '& span': {
+    color: '$blue500',
+  },
 });

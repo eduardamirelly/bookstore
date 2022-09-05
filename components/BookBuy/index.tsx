@@ -1,7 +1,7 @@
 import { Box } from '../../styles/Box';
 import { BookCover } from '../BookCover';
 import { BuyButton } from '../BuyButton';
-import { LabelPrice } from './components/LabelPrice';
+import { LabelPrice } from '../LabelPrice';
 import { BookMark } from '../BookMark';
 
 export const BookBuy = () => {

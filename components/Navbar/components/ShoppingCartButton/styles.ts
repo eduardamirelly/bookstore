@@ -1,7 +1,7 @@
 import { styled } from "../../../../styles/stitches.config"
 
 export const CartSidebarStyle = styled('span', {
-  width: '486px',
+  width: '100%',
   minHeight: '100vh',
 
   position: 'fixed',
@@ -14,6 +14,10 @@ export const CartSidebarStyle = styled('span', {
   paddingTop: '50px',
 
   transition: 'all .3s ease',
+
+  '@sm': {
+    width: '486px',
+  }
 })
 
 export const PanelCover = styled('span', {

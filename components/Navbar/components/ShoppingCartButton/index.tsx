@@ -6,6 +6,7 @@ import { TextLarge } from '../../../../styles/Texts/TextLarge';
 import { TextSmall } from '../../../../styles/Texts/TextSmall';
 import { ButtonLink } from '../../../ButtonLink';
 import { LabelPrice } from '../../../LabelPrice';
+import { BookInCart } from './components/BookInCart';
 import { CartSidebarStyle, PanelCover } from './styles';
 
 export const ShoppingCartButton = () => {
@@ -30,6 +31,20 @@ export const ShoppingCartButton = () => {
 
         <Box
           css={{
+            flexDirection: 'column',
+            marginTop: '20px',
+            gap: '14px',
+            maxHeight: 'calc(100vh - 320px)',
+            overflowY: 'auto',
+            paddingBlock: '10px',
+          }}
+        >
+          <BookInCart />
+          <BookInCart />
+        </Box>
+
+        <Box
+          css={{
             width: '100%',
             borderTop: '2px solid $gray800',
             borderLeft: '2px solid $gray800',
@@ -43,6 +58,7 @@ export const ShoppingCartButton = () => {
 
             flexDirection: 'column',
             gap: '38px',
+            backgroundColor: 'white',
           }}
         >
           <Box
@@ -67,7 +83,10 @@ export const ShoppingCartButton = () => {
           </ButtonLink>
         </Box>
       </CartSidebarStyle>
-      <PanelCover css={isOpen ? { display: 'block', opacity: '.3' } : {}} />
+      <PanelCover
+        onClick={() => setIsOpen(false)}
+        css={isOpen ? { display: 'block', opacity: '.3' } : {}}
+      />
     </>
   );
 };

@@ -33,11 +33,34 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({ isFavorites }) => {
         css={{
           width: '100%',
           justifyContent: 'flex-start',
-          gap: '75px',
+          alignItems: 'center',
+
+          gap: '30px',
           marginTop: '70px',
+
+          flexWrap: 'wrap',
+          flexDirection: 'column',
+
+          '@sm': {
+            flexDirection: 'row',
+          },
         }}
       >
-        {isFavorites ? <BookFavorite /> : <BookBuy />}
+        {isFavorites ? (
+          <>
+            <BookFavorite />
+            <BookFavorite />
+            <BookFavorite />
+            <BookFavorite />
+          </>
+        ) : (
+          <>
+            <BookBuy />
+            <BookBuy />
+            <BookBuy />
+            <BookBuy />
+          </>
+        )}
       </Box>
     </Box>
   );

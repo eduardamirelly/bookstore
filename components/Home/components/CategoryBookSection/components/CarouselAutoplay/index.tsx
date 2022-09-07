@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-export const CarouselClick = () => {
+export const CarouselAutoplay = () => {
   return (
     <Swiper
       modules={[Autoplay]}

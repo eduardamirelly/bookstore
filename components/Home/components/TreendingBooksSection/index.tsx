@@ -2,7 +2,7 @@ import { Sparkle } from 'phosphor-react';
 import { Box } from '../../../../styles/Box';
 import { TextXSmall } from '../../../../styles/Texts/TextXSmall';
 import { TitleH2 } from '../../../../styles/Titles/TitleH2';
-import { BookCover } from '../../../BookCover';
+import { Carousel } from './components/Carousel';
 import { BannerDash } from './styles';
 
 export const TreendingBooksSection = () => {
@@ -28,15 +28,11 @@ export const TreendingBooksSection = () => {
         }}
       >
         <Sparkle size={16} weight="regular" />
-        Scroll to explore
+        Drag to explore
       </TextXSmall>
 
       <BannerDash>
-        <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
-        {/* <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
-        <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
-        <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
-        <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" /> */}
+        <Carousel />
       </BannerDash>
     </Box>
   );

@@ -1,12 +1,12 @@
 import { styled } from "../../../../styles/stitches.config"
 
 export const CartSidebarStyle = styled('span', {
-  width: '100%',
+  width: '0',
   minHeight: '100vh',
 
   position: 'fixed',
   top: '0',
-  right: '-486px',
+  right: '-500px',
   zIndex: '15',
 
   backgroundColor: 'white',

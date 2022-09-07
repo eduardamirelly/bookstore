@@ -18,7 +18,19 @@ export const ShoppingCartButton = () => {
         <ShoppingCart size={32} weight="light" />
       </IconClick>
 
-      <CartSidebarStyle css={isOpen ? { right: 0 } : {}}>
+      <CartSidebarStyle
+        css={
+          isOpen
+            ? {
+                right: 0,
+                width: '100%',
+                '@sm': {
+                  width: '486px',
+                },
+              }
+            : {}
+        }
+      >
         <Box css={{ alignItems: 'center', gap: '10px', paddingInline: '20px' }}>
           <IconClick onClick={() => setIsOpen(false)}>
             <CaretLeft size={32} weight="light" />

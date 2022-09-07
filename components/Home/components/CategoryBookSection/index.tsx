@@ -2,8 +2,7 @@ import { Path } from 'phosphor-react';
 import React from 'react';
 import { Box } from '../../../../styles/Box';
 import { TitleH2 } from '../../../../styles/Titles/TitleH2';
-import { Arrow } from '../../../Arrow';
-import { BookBuy } from '../../../BookBuy';
+import { CarouselClick } from './components/CarouselAutoplay';
 
 interface CategoryBookProps {
   category: string;
@@ -22,54 +21,25 @@ export const CategoryBookSection: React.FC<CategoryBookProps> = ({
         gap: '36px',
       }}
     >
-      <Box
+      <TitleH2
         css={{
-          width: '100%',
-          justifyContent: 'space-between',
+          display: 'flex',
           alignItems: 'center',
+          gap: '8px',
+          alignSelf: 'flex-start',
         }}
       >
-        <TitleH2
-          css={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-            alignSelf: 'flex-start',
-          }}
-        >
-          <Path size={36} weight="regular" />
-          {category}
-        </TitleH2>
-
-        <Box
-          css={{
-            alignItems: 'center',
-            gap: '10px',
-          }}
-        >
-          <Arrow isRight={false} />
-          <Arrow isRight={true} />
-        </Box>
-      </Box>
+        <Path size={36} weight="regular" />
+        {category}
+      </TitleH2>
 
       <Box
         css={{
           width: '100%',
-          justifyContent: 'space-between',
           alignItems: 'center',
-          gap: '50px',
-          flexDirection: 'column',
-
-          '@md': {
-            flexDirection: 'row',
-          },
         }}
       >
-        <BookBuy />
-        {/* <BookBuy />
-        <BookBuy />
-        <BookBuy />
-        <BookBuy /> */}
+        <CarouselClick />
       </Box>
     </Box>
   );

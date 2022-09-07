@@ -2,7 +2,7 @@ import { Path } from 'phosphor-react';
 import React from 'react';
 import { Box } from '../../../../styles/Box';
 import { TitleH2 } from '../../../../styles/Titles/TitleH2';
-import { CarouselClick } from './components/CarouselClick';
+import { CarouselClick } from './components/CarouselAutoplay';
 
 interface CategoryBookProps {
   category: string;

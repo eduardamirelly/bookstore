@@ -42,9 +42,3 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(249, 120, 75, .85);
 }
-
-select {
-  -moz-appearance:none; /* Firefox */
-  -webkit-appearance:none; /* Safari and Chrome */
-  appearance:none;
-}

@@ -1,6 +1,8 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { Provider } from 'react-redux';
+import store from '../store';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -8,7 +10,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>BookStore</title>
       </Head>
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </>
   );
 }

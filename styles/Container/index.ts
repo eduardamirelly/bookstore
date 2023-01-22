@@ -9,7 +9,7 @@ export const Container = styled('div', theme, {
     margin: '0 auto',
   },
   '@xxlx': {
-    margin: '0 3rem',
+    margin: '0 auto',
   },
 
   fontFamily: '$primary',

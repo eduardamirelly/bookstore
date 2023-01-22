@@ -8,9 +8,6 @@ export const Container = styled('div', theme, {
   '@xxl': {
     margin: '0 auto',
   },
-  '@xxlx': {
-    margin: '0 auto',
-  },
 
   fontFamily: '$primary',
 });

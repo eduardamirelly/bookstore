@@ -46,6 +46,5 @@ export const { styled, theme, css } = createStitches({
     lg: '(min-width: 992px)',
     xl: '(min-width: 1200px)',
     xxl: '(min-width: 1440px)',
-    xxlx: '(max-width: 1500px) and (min-width: 768px)',
   },
 })

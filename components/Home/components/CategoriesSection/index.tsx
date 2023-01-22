@@ -1,6 +1,8 @@
 import { FolderNotchOpen } from 'phosphor-react';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { useReduxSelector } from '../../../../store';
+import Category from '../../../../store/@types/categories';
 import { loadCategoriesRequest } from '../../../../store/features/categories';
 import { Box } from '../../../../styles/Box';
 import { TitleH2 } from '../../../../styles/Titles/TitleH2';
@@ -9,9 +11,13 @@ import { ButtonLink } from '../../../ButtonLink';
 export const CategoriesSection = () => {
   const dispatch = useDispatch();
 
+  const categories: Category[] = useReduxSelector(
+    (state) => state.categories.data
+  );
+
   useEffect(() => {
     dispatch(loadCategoriesRequest());
-  });
+  }, []);
 
   return (
     <Box
@@ -52,139 +58,28 @@ export const CategoriesSection = () => {
           },
         }}
       >
-        <ButtonLink
-          href="/"
-          borderRadius="small"
-          fontSize="large"
-          backgroundColorHover="yellow"
-          beforeShadow="orange"
-          css={{
-            height: '80px',
-            width: '100%',
-            paddingInline: '1rem',
-            paddingBlock: '1.5rem',
+        {categories.map((category) => (
+          <ButtonLink
+            key={category.id}
+            href="/"
+            borderRadius="small"
+            fontSize="large"
+            backgroundColorHover="yellow"
+            beforeShadow="orange"
+            css={{
+              height: '80px',
+              width: '100%',
+              paddingInline: '1rem',
+              paddingBlock: '1.5rem',
 
-            '@md': {
-              width: '388px',
-            },
-          }}
-        >
-          Adventure
-        </ButtonLink>
-
-        <ButtonLink
-          href="/"
-          borderRadius="small"
-          fontSize="large"
-          backgroundColorHover="yellow"
-          beforeShadow="orange"
-          css={{
-            height: '80px',
-            width: '100%',
-            paddingInline: '1rem',
-            paddingBlock: '1.5rem',
-
-            '@md': {
-              width: '388px',
-            },
-          }}
-        >
-          Adventure
-        </ButtonLink>
-
-        <ButtonLink
-          href="/"
-          borderRadius="small"
-          fontSize="large"
-          backgroundColorHover="yellow"
-          beforeShadow="orange"
-          css={{
-            height: '80px',
-            width: '100%',
-            paddingInline: '1rem',
-            paddingBlock: '1.5rem',
-
-            '@md': {
-              width: '388px',
-            },
-          }}
-        >
-          Adventure
-        </ButtonLink>
-      </Box>
-
-      <Box
-        css={{
-          width: '100%',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          gap: '50px',
-          flexDirection: 'column',
-
-          '@md': {
-            flexDirection: 'row',
-          },
-        }}
-      >
-        <ButtonLink
-          href="/"
-          borderRadius="small"
-          fontSize="large"
-          backgroundColorHover="yellow"
-          beforeShadow="orange"
-          css={{
-            height: '80px',
-            width: '100%',
-            paddingInline: '1rem',
-            paddingBlock: '1.5rem',
-
-            '@md': {
-              width: '388px',
-            },
-          }}
-        >
-          Adventure
-        </ButtonLink>
-
-        <ButtonLink
-          href="/"
-          borderRadius="small"
-          fontSize="large"
-          backgroundColorHover="yellow"
-          beforeShadow="orange"
-          css={{
-            height: '80px',
-            width: '100%',
-            paddingInline: '1rem',
-            paddingBlock: '1.5rem',
-
-            '@md': {
-              width: '388px',
-            },
-          }}
-        >
-          Adventure
-        </ButtonLink>
-
-        <ButtonLink
-          href="/"
-          borderRadius="small"
-          fontSize="large"
-          backgroundColorHover="yellow"
-          beforeShadow="orange"
-          css={{
-            height: '80px',
-            width: '100%',
-            paddingInline: '1rem',
-            paddingBlock: '1.5rem',
-
-            '@md': {
-              width: '388px',
-            },
-          }}
-        >
-          Adventure
-        </ButtonLink>
+              '@md': {
+                width: '388px',
+              },
+            }}
+          >
+            {category.name}
+          </ButtonLink>
+        ))}
       </Box>
     </Box>
   );

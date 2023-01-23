@@ -6,7 +6,7 @@ import { BookMarkerStyle, BookUnMarker } from './styles';
 export const BookFavorite = () => {
   return (
     <Box css={{ position: 'relative' }}>
-      <BookCover imgSrc="/assets/cover-book.svg" />
+      <BookCover />
 
       <BookMarkerStyle>
         <BookmarkSimple size={32} weight="regular" />

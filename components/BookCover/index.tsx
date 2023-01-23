@@ -10,7 +10,7 @@ interface BookCoverProps {
 }
 
 export const BookCover: React.FC<BookCoverProps> = ({
-  imgSrc = 'https://picsum.photos/id/29/200/300',
+  imgSrc = '/assets/cover-example.webp',
   beforeShadow,
   css,
 }) => {

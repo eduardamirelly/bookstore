@@ -1,8 +1,8 @@
 import { Box } from '../../styles/Box';
 import { BookCover } from '../BookCover';
+import { BookMark } from '../BookMark';
 import { BuyButton } from '../BuyButton';
 import { LabelPrice } from '../LabelPrice';
-import { BookMark } from '../BookMark';
 
 export const BookBuy = () => {
   return (
@@ -13,7 +13,7 @@ export const BookBuy = () => {
       }}
     >
       <Box>
-        <BookCover imgSrc="/assets/cover-book.svg" />
+        <BookCover />
       </Box>
 
       <Box

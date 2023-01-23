@@ -1,8 +1,11 @@
+import { AxiosResponse } from 'axios';
+
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { loadCategoriesRequest, loadCategoriesFailure, loadCategoriesSuccess } from '../features/categories';
+
 import api from '../../services/api';
 import Category from '../@types/categories';
-import { AxiosResponse } from 'axios';
+
+import { loadCategoriesFailure, loadCategoriesRequest, loadCategoriesSuccess } from '../features/categories';
 
 const getCategories = () => api.get<Category[]>('/categories');
 

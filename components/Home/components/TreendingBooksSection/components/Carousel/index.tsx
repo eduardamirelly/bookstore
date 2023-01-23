@@ -2,8 +2,8 @@ import { BookCover } from '../../../../../BookCover';
 
 import { Autoplay } from 'swiper';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 export const Carousel = () => {
   return (
@@ -23,39 +23,39 @@ export const Carousel = () => {
       }}
     >
       <SwiperSlide style={{ width: '200px' }}>
-        <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
+        <BookCover beforeShadow />
       </SwiperSlide>
 
       <SwiperSlide style={{ width: '200px' }}>
-        <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
+        <BookCover beforeShadow />
       </SwiperSlide>
 
       <SwiperSlide style={{ width: '200px' }}>
-        <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
+        <BookCover beforeShadow />
       </SwiperSlide>
 
       <SwiperSlide style={{ width: '200px' }}>
-        <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
+        <BookCover beforeShadow />
       </SwiperSlide>
 
       <SwiperSlide style={{ width: '200px' }}>
-        <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
+        <BookCover beforeShadow />
       </SwiperSlide>
 
       <SwiperSlide style={{ width: '200px' }}>
-        <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
+        <BookCover beforeShadow />
       </SwiperSlide>
 
       <SwiperSlide style={{ width: '200px' }}>
-        <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
+        <BookCover beforeShadow />
       </SwiperSlide>
 
       <SwiperSlide style={{ width: '200px' }}>
-        <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
+        <BookCover beforeShadow />
       </SwiperSlide>
 
       <SwiperSlide style={{ width: '200px' }}>
-        <BookCover imgSrc="/assets/cover-book.svg" beforeShadow="on" />
+        <BookCover beforeShadow />
       </SwiperSlide>
     </Swiper>
   );

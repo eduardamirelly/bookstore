@@ -25,8 +25,7 @@ export const BookDetail = () => {
       }}
     >
       <BookCover
-        imgSrc="/assets/cover-book.svg"
-        beforeShadow="on"
+        beforeShadow
         css={{
           width: '300px',
         }}

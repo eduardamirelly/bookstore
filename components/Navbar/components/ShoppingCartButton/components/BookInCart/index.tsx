@@ -17,7 +17,6 @@ export const BookInCart = () => (
       }}
     >
       <BookCover
-        imgSrc="/assets/cover-book.svg"
         css={{
           minWidth: '70px',
           minHeight: '104px',

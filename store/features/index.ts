@@ -1,8 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import book from './book';
+import books from './books';
 import categories from './categories';
 
 export default combineReducers({
-  book,
+  books,
   categories,
 });

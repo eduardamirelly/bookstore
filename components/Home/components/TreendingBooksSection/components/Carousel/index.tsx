@@ -2,10 +2,21 @@ import { BookCover } from '../../../../../BookCover';
 
 import { Autoplay } from 'swiper';
 
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useReduxSelector } from '../../../../../../store';
+import { loadBooksRequest } from '../../../../../../store/features/books';
 
 export const Carousel = () => {
+  const dispatch = useDispatch();
+  const books = useReduxSelector((state) => state.books.data);
+
+  useEffect(() => {
+    dispatch(loadBooksRequest());
+  }, []);
+
   return (
     <Swiper
       modules={[Autoplay]}

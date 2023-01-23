@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import Category from '../@types/categories';
 
 export const CategoriesSlice = createSlice({
   name: 'categories',
   initialState: {
-    data: [],
+    data: [] as Category[],
     loading: false,
   },
   reducers: {

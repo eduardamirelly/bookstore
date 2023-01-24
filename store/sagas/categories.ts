@@ -7,10 +7,10 @@ import Category from '../@types/categories';
 
 import { loadCategoriesFailure, loadCategoriesRequest, loadCategoriesSuccess } from '../features/categories';
 
-const getCategories = () => api.get<Category[]>('/categories');
 
 function* fetchCategories() {
   try {
+    const getCategories = () => api.get<Category[]>('/categories');
     const response: AxiosResponse<Category[]> = yield call(getCategories);
     yield put({ type: loadCategoriesSuccess.type, payload: response.data });
   } catch {

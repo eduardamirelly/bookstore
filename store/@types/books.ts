@@ -6,7 +6,7 @@ export interface Book {
   price: number;
   cover: string;
   isFavorite: boolean;
-  isInTreeding: boolean;
+  isInTrending: boolean;
   createdAt: Date;
   updatedAt: Date;
 }

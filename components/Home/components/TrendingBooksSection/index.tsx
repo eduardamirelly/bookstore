@@ -36,7 +36,7 @@ export const TrendingBooksSection = () => {
 
       <BannerDash>
         {books.length > 0 ? (
-          <Carousel sliders={books} />
+          <Carousel sliders={books.filter((book) => book.isInTrending)} />
         ) : (
           <div>Carregando...</div>
         )}

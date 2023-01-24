@@ -1,11 +1,14 @@
 import { Sparkle } from 'phosphor-react';
+import { useReduxSelector } from '../../../../store';
 import { Box } from '../../../../styles/Box';
 import { TextXSmall } from '../../../../styles/Texts/TextXSmall';
 import { TitleH2 } from '../../../../styles/Titles/TitleH2';
 import { Carousel } from './components/Carousel';
 import { BannerDash } from './styles';
 
-export const TreendingBooksSection = () => {
+export const TrendingBooksSection = () => {
+  const books = useReduxSelector((state) => state.books.data);
+
   return (
     <Box
       css={{
@@ -32,7 +35,11 @@ export const TreendingBooksSection = () => {
       </TextXSmall>
 
       <BannerDash>
-        <Carousel />
+        {books.length > 0 ? (
+          <Carousel sliders={books} />
+        ) : (
+          <div>Carregando...</div>
+        )}
       </BannerDash>
     </Box>
   );

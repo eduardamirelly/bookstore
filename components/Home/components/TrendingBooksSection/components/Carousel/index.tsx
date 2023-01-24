@@ -10,15 +10,13 @@ interface CarouselProps {
 }
 
 export const Carousel = ({ sliders = [] }: CarouselProps) => {
-  console.log(sliders);
-
   return (
     <Swiper
       modules={[Autoplay]}
       spaceBetween={30}
       slidesPerView={'auto'}
       grabCursor={true}
-      initialSlide={1}
+      initialSlide={4}
       loop={true}
       autoplay={{ delay: 0, disableOnInteraction: false }}
       speed={2000}

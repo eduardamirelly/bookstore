@@ -1,20 +1,11 @@
 import { FolderNotchOpen } from 'phosphor-react';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { useReduxSelector } from '../../../../store';
-import { loadCategoriesRequest } from '../../../../store/features/categories';
 import { Box } from '../../../../styles/Box';
 import { TitleH2 } from '../../../../styles/Titles/TitleH2';
 import { ButtonLink } from '../../../ButtonLink';
 
 export const CategoriesSection = () => {
-  const dispatch = useDispatch();
-
   const categories = useReduxSelector((state) => state.categories.data);
-
-  useEffect(() => {
-    dispatch(loadCategoriesRequest());
-  }, []);
 
   return (
     <Box

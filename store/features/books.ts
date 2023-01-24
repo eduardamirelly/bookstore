@@ -12,7 +12,7 @@ export const BookSlice = createSlice({
       state.loading = true;
     },
     loadBooksSuccess(state, action) {
-      const { books } = action.payload;
+      const books = action.payload;
       state.data = books;
       state.loading = false;
     },

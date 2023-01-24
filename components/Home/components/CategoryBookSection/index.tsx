@@ -1,5 +1,6 @@
 import { Path } from 'phosphor-react';
 import React from 'react';
+import { useReduxSelector } from '../../../../store';
 import { Box } from '../../../../styles/Box';
 import { TitleH2 } from '../../../../styles/Titles/TitleH2';
 import { CarouselAutoplay } from './components/CarouselAutoplay';
@@ -11,6 +12,8 @@ interface CategoryBookProps {
 export const CategoryBookSection: React.FC<CategoryBookProps> = ({
   category,
 }) => {
+  const books = useReduxSelector((state) => state.books.data);
+
   return (
     <Box
       css={{
@@ -39,7 +42,11 @@ export const CategoryBookSection: React.FC<CategoryBookProps> = ({
           alignItems: 'center',
         }}
       >
-        <CarouselAutoplay />
+        {books.length > 0 ? (
+          <CarouselAutoplay sliders={books} />
+        ) : (
+          <div>Carregando...</div>
+        )}
       </Box>
     </Box>
   );

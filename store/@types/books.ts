@@ -9,4 +9,5 @@ export interface Book {
   isInTrending: boolean;
   createdAt: Date;
   updatedAt: Date;
+  categories: string[];
 }

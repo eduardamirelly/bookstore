@@ -4,8 +4,13 @@ import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
+import { Book } from '../../../../../../store/@types/books';
 
-export const CarouselAutoplay = () => {
+interface CarouselAutoplayProps {
+  sliders: Book[];
+}
+
+export const CarouselAutoplay = ({ sliders }: CarouselAutoplayProps) => {
   return (
     <Swiper
       modules={[Autoplay]}
@@ -18,41 +23,11 @@ export const CarouselAutoplay = () => {
         width: '100%',
       }}
     >
-      <SwiperSlide style={{ width: '200px' }}>
-        <BookBuy />
-      </SwiperSlide>
-
-      <SwiperSlide style={{ width: '200px' }}>
-        <BookBuy />
-      </SwiperSlide>
-
-      <SwiperSlide style={{ width: '200px' }}>
-        <BookBuy />
-      </SwiperSlide>
-
-      <SwiperSlide style={{ width: '200px' }}>
-        <BookBuy />
-      </SwiperSlide>
-
-      <SwiperSlide style={{ width: '200px' }}>
-        <BookBuy />
-      </SwiperSlide>
-
-      <SwiperSlide style={{ width: '200px' }}>
-        <BookBuy />
-      </SwiperSlide>
-
-      <SwiperSlide style={{ width: '200px' }}>
-        <BookBuy />
-      </SwiperSlide>
-
-      <SwiperSlide style={{ width: '200px' }}>
-        <BookBuy />
-      </SwiperSlide>
-
-      <SwiperSlide style={{ width: '200px' }}>
-        <BookBuy />
-      </SwiperSlide>
+      {sliders.map((slide) => (
+        <SwiperSlide key={slide.id} style={{ width: '200px' }}>
+          <BookBuy imgSrc={slide.cover} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };

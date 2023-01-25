@@ -1,3 +1,5 @@
+import { CategoryInBooks } from "./categories";
+
 export interface Book {
   id: string;
   title: string;
@@ -6,7 +8,8 @@ export interface Book {
   price: number;
   cover: string;
   isFavorite: boolean;
-  isInTreeding: boolean;
+  isInTrending: boolean;
   createdAt: Date;
   updatedAt: Date;
+  categories: CategoryInBooks[];
 }

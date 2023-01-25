@@ -4,7 +4,11 @@ import { BookMark } from '../BookMark';
 import { BuyButton } from '../BuyButton';
 import { LabelPrice } from '../LabelPrice';
 
-export const BookBuy = () => {
+interface BookBuyProps {
+  imgSrc?: string;
+}
+
+export const BookBuy = ({ imgSrc }: BookBuyProps) => {
   return (
     <Box
       css={{
@@ -13,7 +17,7 @@ export const BookBuy = () => {
       }}
     >
       <Box>
-        <BookCover />
+        <BookCover imgSrc={imgSrc} />
       </Box>
 
       <Box

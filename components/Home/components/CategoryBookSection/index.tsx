@@ -13,6 +13,7 @@ export const CategoryBookSection: React.FC<CategoryBookProps> = ({
   category,
 }) => {
   const books = useReduxSelector((state) => state.books.data);
+  console.log(category);
 
   return (
     <Box
@@ -43,7 +44,20 @@ export const CategoryBookSection: React.FC<CategoryBookProps> = ({
         }}
       >
         {books.length > 0 ? (
-          <CarouselAutoplay sliders={books} />
+          books.filter(
+            (book) =>
+              book.categories.length > 0 && book.categories.includes(category)
+          ).length > 0 ? (
+            <CarouselAutoplay
+              sliders={books.filter((book) =>
+                book.categories.length > 0
+                  ? book.categories.includes(category)
+                  : false
+              )}
+            />
+          ) : (
+            <div>Não tem livros disponível para essa categoria...</div>
+          )
         ) : (
           <div>Carregando...</div>
         )}

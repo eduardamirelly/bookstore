@@ -3,6 +3,7 @@ import React from 'react';
 import { useReduxSelector } from '../../../../store';
 import { Box } from '../../../../styles/Box';
 import { TitleH2 } from '../../../../styles/Titles/TitleH2';
+import { CarouselAutoplay } from './components/CarouselAutoplay';
 
 interface CategoryBookProps {
   category: string;
@@ -46,21 +47,15 @@ export const CategoryBookSection: React.FC<CategoryBookProps> = ({
           alignItems: 'center',
         }}
       >
-        {/* {books.length > 0 ? (
-          books.filter(.categories.map(
-            (categoryObj) => categoryObj.category.name == category
-          ).length > 0 ? (
-            <CarouselAutoplay
-              sliders={books[0].categories.map(
-                (categoryObj) => categoryObj.category.name == category
-              )}
-            />
+        {books.length > 0 ? (
+          books.length > 0 ? (
+            <CarouselAutoplay sliders={books} />
           ) : (
             <div>Não tem livros disponível para essa categoria...</div>
           )
         ) : (
           <div>Carregando...</div>
-        )} */}
+        )}
       </Box>
     </Box>
   );

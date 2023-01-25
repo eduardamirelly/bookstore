@@ -3,7 +3,6 @@ import React from 'react';
 import { useReduxSelector } from '../../../../store';
 import { Box } from '../../../../styles/Box';
 import { TitleH2 } from '../../../../styles/Titles/TitleH2';
-import { CarouselAutoplay } from './components/CarouselAutoplay';
 
 interface CategoryBookProps {
   category: string;
@@ -13,7 +12,11 @@ export const CategoryBookSection: React.FC<CategoryBookProps> = ({
   category,
 }) => {
   const books = useReduxSelector((state) => state.books.data);
-  console.log(category);
+  if (books.length > 0) {
+    books[0].categories.map((categoryObj) => {
+      console.log(categoryObj.category.name);
+    });
+  }
 
   return (
     <Box
@@ -43,16 +46,13 @@ export const CategoryBookSection: React.FC<CategoryBookProps> = ({
           alignItems: 'center',
         }}
       >
-        {books.length > 0 ? (
-          books.filter(
-            (book) =>
-              book.categories.length > 0 && book.categories.includes(category)
+        {/* {books.length > 0 ? (
+          books.filter(.categories.map(
+            (categoryObj) => categoryObj.category.name == category
           ).length > 0 ? (
             <CarouselAutoplay
-              sliders={books.filter((book) =>
-                book.categories.length > 0
-                  ? book.categories.includes(category)
-                  : false
+              sliders={books[0].categories.map(
+                (categoryObj) => categoryObj.category.name == category
               )}
             />
           ) : (
@@ -60,7 +60,7 @@ export const CategoryBookSection: React.FC<CategoryBookProps> = ({
           )
         ) : (
           <div>Carregando...</div>
-        )}
+        )} */}
       </Box>
     </Box>
   );

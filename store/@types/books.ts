@@ -1,3 +1,5 @@
+import Category from "./categories";
+
 export interface Book {
   id: string;
   title: string;
@@ -9,5 +11,5 @@ export interface Book {
   isInTrending: boolean;
   createdAt: Date;
   updatedAt: Date;
-  categories: string[];
+  categories: Category[];
 }

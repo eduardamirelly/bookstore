@@ -5,7 +5,11 @@ import { styled } from '../../styles/stitches.config';
 import { TextLarge } from '../../styles/Texts/TextLarge';
 import { SelectInput } from './components/SelectInput';
 
-export const Filters = () => {
+interface FiltersProps {
+  optionsFilter?: string[];
+}
+
+export const Filters = ({ optionsFilter }: FiltersProps) => {
   const TextBlueResult = styled('span', {
     color: '$blue500',
   });
@@ -48,7 +52,11 @@ export const Filters = () => {
             },
           }}
         >
-          <SelectInput selectInitial="Categories" css={{ width: '308px' }} />
+          <SelectInput
+            selectInitial="Categories"
+            collection={optionsFilter}
+            css={{ width: '308px' }}
+          />
           <SelectInput selectInitial="Filter By" css={{ width: '168px' }} />
         </Box>
       </Box>

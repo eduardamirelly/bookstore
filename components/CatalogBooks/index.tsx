@@ -1,3 +1,6 @@
+import { useEffect, useState } from 'react';
+import { useReduxSelector } from '../../store';
+import { Book } from '../../store/@types/books';
 import { Box } from '../../styles/Box';
 import { BookBuy } from '../BookBuy';
 import { BookFavorite } from '../BookFavorite';
@@ -6,9 +9,26 @@ import { InputSearch } from '../InputSearch';
 
 interface CatalogBooksProps {
   isFavorites: boolean;
+  books: Book[];
 }
 
-export const CatalogBooks: React.FC<CatalogBooksProps> = ({ isFavorites }) => {
+export const CatalogBooks: React.FC<CatalogBooksProps> = ({
+  isFavorites,
+  books,
+}) => {
+  const categories = useReduxSelector((state) => state.categories.data);
+  const [optionsCategory, setOptionsCategory] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (categories.length > 0) {
+      setOptionsCategory(
+        categories.map((category) => {
+          return category.name;
+        })
+      );
+    }
+  }, [categories]);
+
   return (
     <Box
       css={{
@@ -27,7 +47,7 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({ isFavorites }) => {
         <InputSearch />
       </Box>
 
-      <Filters />
+      <Filters optionsFilter={optionsCategory} />
 
       <Box
         css={{
@@ -48,17 +68,20 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({ isFavorites }) => {
       >
         {isFavorites ? (
           <>
-            <BookFavorite />
-            <BookFavorite />
-            <BookFavorite />
-            <BookFavorite />
+            {books.map((book) => (
+              <BookFavorite key={book.id} imgSrc={book.cover} />
+            ))}
           </>
         ) : (
           <>
-            <BookBuy />
-            <BookBuy />
-            <BookBuy />
-            <BookBuy />
+            {books.map((book) => (
+              <BookBuy
+                key={book.id}
+                imgSrc={book.cover}
+                isFavorited={book.isFavorite}
+                price={book.price}
+              />
+            ))}
           </>
         )}
       </Box>

@@ -5,6 +5,7 @@ import { Box } from '../../styles/Box';
 import { BookBuy } from '../BookBuy';
 import { BookFavorite } from '../BookFavorite';
 import { Filters } from '../Filters';
+import { SelectInput } from '../Filters/components/SelectInput';
 import { InputSearch } from '../InputSearch';
 
 interface CatalogBooksProps {
@@ -47,7 +48,14 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
         <InputSearch />
       </Box>
 
-      <Filters optionsFilter={optionsCategory} />
+      <Filters>
+        <SelectInput
+          selectInitial="Categories"
+          collection={optionsCategory}
+          css={{ width: '308px' }}
+        />
+        <SelectInput selectInitial="Filter By" css={{ width: '168px' }} />
+      </Filters>
 
       <Box
         css={{

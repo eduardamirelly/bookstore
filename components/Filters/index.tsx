@@ -1,15 +1,13 @@
-import { CaretDown } from 'phosphor-react';
 import { Box } from '../../styles/Box';
 import { DashLine } from '../../styles/DashLine';
 import { styled } from '../../styles/stitches.config';
 import { TextLarge } from '../../styles/Texts/TextLarge';
-import { SelectInput } from './components/SelectInput';
 
 interface FiltersProps {
-  optionsFilter?: string[];
+  children: React.ReactNode;
 }
 
-export const Filters = ({ optionsFilter }: FiltersProps) => {
+export const Filters = ({ children }: FiltersProps) => {
   const TextBlueResult = styled('span', {
     color: '$blue500',
   });
@@ -52,12 +50,7 @@ export const Filters = ({ optionsFilter }: FiltersProps) => {
             },
           }}
         >
-          <SelectInput
-            selectInitial="Categories"
-            collection={optionsFilter}
-            css={{ width: '308px' }}
-          />
-          <SelectInput selectInitial="Filter By" css={{ width: '168px' }} />
+          {children}
         </Box>
       </Box>
 

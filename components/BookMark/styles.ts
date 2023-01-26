@@ -4,11 +4,8 @@ export const MarkStyle = styled('button', {
   minWidth: '57px',
   height: '46px',
 
-  color: '$gray800',
-
   border: '2px solid $gray800',
   borderRadius: '20px',
-  backgroundColor: 'white',
   padding: '5px',
 
   textAlign: 'center',
@@ -16,7 +13,22 @@ export const MarkStyle = styled('button', {
 
   transition: 'color .3s ease',
 
-  '&:hover': {
-    color: '$blue500',
+  variants: {
+    mark: {
+      active: {
+        backgroundColor: '$blue500',
+        color: 'white',
+        '&:hover': {
+          color: 'white',
+        },
+      },
+      off: {
+        backgroundColor: 'white',
+        color: '$gray800',
+        '&:hover': {
+          color: '$blue500',
+        },
+      },
+    },
   },
 });

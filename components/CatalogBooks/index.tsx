@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import { useReduxSelector } from '../../store';
 import { Book } from '../../store/@types/books';
 import { Box } from '../../styles/Box';
 import { BookBuy } from '../BookBuy';
@@ -14,6 +16,19 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
   isFavorites,
   books,
 }) => {
+  const categories = useReduxSelector((state) => state.categories.data);
+  const [optionsCategory, setOptionsCategory] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (categories.length > 0) {
+      setOptionsCategory(
+        categories.map((category) => {
+          return category.name;
+        })
+      );
+    }
+  }, [categories]);
+
   return (
     <Box
       css={{
@@ -32,7 +47,7 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
         <InputSearch />
       </Box>
 
-      <Filters />
+      <Filters optionsFilter={optionsCategory} />
 
       <Box
         css={{

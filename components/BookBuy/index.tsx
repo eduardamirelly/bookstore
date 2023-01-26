@@ -6,9 +6,11 @@ import { LabelPrice } from '../LabelPrice';
 
 interface BookBuyProps {
   imgSrc?: string;
+  price: number;
+  isFavorited: boolean;
 }
 
-export const BookBuy = ({ imgSrc }: BookBuyProps) => {
+export const BookBuy = ({ imgSrc, price, isFavorited }: BookBuyProps) => {
   return (
     <Box
       css={{
@@ -28,7 +30,7 @@ export const BookBuy = ({ imgSrc }: BookBuyProps) => {
           marginBlock: '10px',
         }}
       >
-        <LabelPrice price="30.00" />
+        <LabelPrice price={price.toFixed(2)} />
         <BookMark />
       </Box>
 

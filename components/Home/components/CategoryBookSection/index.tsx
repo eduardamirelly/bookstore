@@ -1,6 +1,7 @@
 import { Path } from 'phosphor-react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useReduxSelector } from '../../../../store';
+import { Book } from '../../../../store/@types/books';
 import { Box } from '../../../../styles/Box';
 import { TitleH2 } from '../../../../styles/Titles/TitleH2';
 import { CarouselAutoplay } from './components/CarouselAutoplay';
@@ -12,12 +13,21 @@ interface CategoryBookProps {
 export const CategoryBookSection: React.FC<CategoryBookProps> = ({
   category,
 }) => {
+  const [booksFiltered, setBooksFiltered] = useState<Book[]>([]);
   const books = useReduxSelector((state) => state.books.data);
-  if (books.length > 0) {
-    books[0].categories.map((categoryObj) => {
-      console.log(categoryObj.category.name);
-    });
-  }
+
+  useEffect(() => {
+    if (books.length > 0) {
+      setBooksFiltered(
+        books.filter(
+          (book) =>
+            book.categories.filter((catObj) => catObj.category.name == category)
+              .length > 0
+        )
+      );
+    }
+    console.log(booksFiltered);
+  }, [books]);
 
   return (
     <Box
@@ -48,8 +58,8 @@ export const CategoryBookSection: React.FC<CategoryBookProps> = ({
         }}
       >
         {books.length > 0 ? (
-          books.length > 0 ? (
-            <CarouselAutoplay sliders={books} />
+          booksFiltered.length > 0 ? (
+            <CarouselAutoplay sliders={booksFiltered} />
           ) : (
             <div>Não tem livros disponível para essa categoria...</div>
           )

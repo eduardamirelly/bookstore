@@ -7,15 +7,17 @@ interface BookCoverProps {
   imgSrc?: string;
   beforeShadow?: boolean;
   css?: Stitches.CSS;
+  to?: string;
 }
 
 export const BookCover: React.FC<BookCoverProps> = ({
   imgSrc = '/assets/cover-example.webp',
   beforeShadow,
   css,
+  to,
 }) => {
   return (
-    <TouchableBookStyle>
+    <TouchableBookStyle href={to}>
       <BookCoverStyle css={css}>
         <Image
           src={imgSrc}

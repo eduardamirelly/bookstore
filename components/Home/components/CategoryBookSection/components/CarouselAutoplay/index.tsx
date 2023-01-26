@@ -26,6 +26,7 @@ export const CarouselAutoplay = ({ sliders }: CarouselAutoplayProps) => {
       {sliders.map((slide) => (
         <SwiperSlide key={slide.id} style={{ width: '200px' }}>
           <BookBuy
+            key={slide.id}
             imgSrc={slide.cover}
             price={slide.price}
             isFavorited={slide.isFavorite}

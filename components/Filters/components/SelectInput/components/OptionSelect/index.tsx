@@ -1,5 +1,9 @@
 import { OptionStyle } from './styles';
 
-export const OptionSelect = () => {
-  return <OptionStyle>Option</OptionStyle>;
+interface OptionProps {
+  option: string;
+}
+
+export const OptionSelect = ({ option }: OptionProps) => {
+  return <OptionStyle>{option}</OptionStyle>;
 };

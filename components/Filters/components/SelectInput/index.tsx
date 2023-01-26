@@ -2,6 +2,7 @@ import type * as Stitches from '@stitches/react';
 
 import { CaretDown } from 'phosphor-react';
 import React, { useState } from 'react';
+import { Category } from '../../../../store/@types/categories';
 import { Box } from '../../../../styles/Box';
 import { OptionSelect } from './components/OptionSelect';
 import { AfterBlock, SelectStyle, SpanArrow, OptionsStyle } from './styles';
@@ -9,9 +10,14 @@ import { AfterBlock, SelectStyle, SpanArrow, OptionsStyle } from './styles';
 interface SelectProps {
   selectInitial: string;
   css?: Stitches.CSS;
+  collection?: string[];
 }
 
-export const SelectInput: React.FC<SelectProps> = ({ selectInitial, css }) => {
+export const SelectInput: React.FC<SelectProps> = ({
+  selectInitial,
+  css,
+  collection = ['First Added', 'Last Added'],
+}) => {
   const [nameSelect, setNameSelect] = useState(selectInitial);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -26,9 +32,9 @@ export const SelectInput: React.FC<SelectProps> = ({ selectInitial, css }) => {
 
       {isOpen && (
         <OptionsStyle>
-          <OptionSelect />
-          <OptionSelect />
-          <OptionSelect />
+          {collection.map((collect, index) => (
+            <OptionSelect key={index} option={collect} />
+          ))}
         </OptionsStyle>
       )}
 

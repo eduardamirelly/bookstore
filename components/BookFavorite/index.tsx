@@ -3,10 +3,14 @@ import { Box } from '../../styles/Box';
 import { BookCover } from '../BookCover';
 import { BookMarkerStyle, BookUnMarker } from './styles';
 
-export const BookFavorite = () => {
+interface BookFavoriteProps {
+  imgSrc?: string;
+}
+
+export const BookFavorite = ({ imgSrc }: BookFavoriteProps) => {
   return (
     <Box css={{ position: 'relative' }}>
-      <BookCover />
+      <BookCover imgSrc={imgSrc} />
 
       <BookMarkerStyle>
         <BookmarkSimple size={32} weight="regular" />

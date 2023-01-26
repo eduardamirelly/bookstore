@@ -1,3 +1,4 @@
+import { Book } from '../../store/@types/books';
 import { Box } from '../../styles/Box';
 import { BookBuy } from '../BookBuy';
 import { BookFavorite } from '../BookFavorite';
@@ -6,9 +7,13 @@ import { InputSearch } from '../InputSearch';
 
 interface CatalogBooksProps {
   isFavorites: boolean;
+  books: Book[];
 }
 
-export const CatalogBooks: React.FC<CatalogBooksProps> = ({ isFavorites }) => {
+export const CatalogBooks: React.FC<CatalogBooksProps> = ({
+  isFavorites,
+  books,
+}) => {
   return (
     <Box
       css={{
@@ -55,10 +60,10 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({ isFavorites }) => {
           </>
         ) : (
           <>
-            <BookBuy />
-            <BookBuy />
-            <BookBuy />
-            <BookBuy />
+            <BookBuy isFavorited={false} price={10} />
+            <BookBuy isFavorited={false} price={10} />
+            <BookBuy isFavorited={false} price={10} />
+            <BookBuy isFavorited={false} price={10} />
           </>
         )}
       </Box>

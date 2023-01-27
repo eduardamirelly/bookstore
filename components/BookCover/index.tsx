@@ -8,6 +8,7 @@ interface BookCoverProps {
   beforeShadow?: boolean;
   css?: Stitches.CSS;
   id?: string;
+  canRedirect?: boolean;
 }
 
 export const BookCover: React.FC<BookCoverProps> = ({
@@ -15,13 +16,18 @@ export const BookCover: React.FC<BookCoverProps> = ({
   beforeShadow,
   css,
   id,
+  canRedirect = true,
 }) => {
   return (
     <TouchableBookStyle
-      href={{
-        pathname: '/book/[slug]',
-        query: { slug: id },
-      }}
+      href={
+        canRedirect
+          ? {
+              pathname: '/book/[slug]',
+              query: { slug: id },
+            }
+          : '#'
+      }
     >
       <a>
         <BookCoverStyle css={css}>

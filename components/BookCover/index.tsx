@@ -19,23 +19,23 @@ export const BookCover: React.FC<BookCoverProps> = ({
   return (
     <TouchableBookStyle
       href={{
-        path: '/book',
-        query: {
-          slug: id,
-        },
+        pathname: '/book/[slug]',
+        query: { slug: id },
       }}
     >
-      <BookCoverStyle css={css}>
-        <Image
-          src={imgSrc}
-          width={200}
-          height={298}
-          layout="responsive"
-          objectFit="cover"
-          alt=""
-        />
-      </BookCoverStyle>
-      {beforeShadow && <AfterBlock />}
+      <a>
+        <BookCoverStyle css={css}>
+          <Image
+            src={imgSrc}
+            width={200}
+            height={298}
+            layout="responsive"
+            objectFit="cover"
+            alt=""
+          />
+        </BookCoverStyle>
+        {beforeShadow && <AfterBlock />}
+      </a>
     </TouchableBookStyle>
   );
 };

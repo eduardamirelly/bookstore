@@ -7,28 +7,41 @@ interface BookCoverProps {
   imgSrc?: string;
   beforeShadow?: boolean;
   css?: Stitches.CSS;
-  to?: string;
+  id?: string;
+  canRedirect?: boolean;
 }
 
 export const BookCover: React.FC<BookCoverProps> = ({
   imgSrc = '/assets/cover-example.webp',
   beforeShadow,
   css,
-  to,
+  id,
+  canRedirect = true,
 }) => {
   return (
-    <TouchableBookStyle href={to}>
-      <BookCoverStyle css={css}>
-        <Image
-          src={imgSrc}
-          width={200}
-          height={298}
-          layout="responsive"
-          objectFit="cover"
-          alt=""
-        />
-      </BookCoverStyle>
-      {beforeShadow && <AfterBlock />}
+    <TouchableBookStyle
+      href={
+        canRedirect
+          ? {
+              pathname: '/book/[slug]',
+              query: { slug: id },
+            }
+          : '#'
+      }
+    >
+      <a>
+        <BookCoverStyle css={css}>
+          <Image
+            src={imgSrc}
+            width={200}
+            height={298}
+            layout="responsive"
+            objectFit="cover"
+            alt=""
+          />
+        </BookCoverStyle>
+        {beforeShadow && <AfterBlock />}
+      </a>
     </TouchableBookStyle>
   );
 };

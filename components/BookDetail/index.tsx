@@ -26,6 +26,7 @@ export const BookDetail = () => {
     >
       <BookCover
         beforeShadow
+        canRedirect={false}
         css={{
           width: '300px',
         }}

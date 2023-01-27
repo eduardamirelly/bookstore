@@ -28,7 +28,7 @@ export const Carousel = ({ sliders = [] }: CarouselProps) => {
     >
       {sliders.map((slide) => (
         <SwiperSlide key={slide.id} style={{ width: '200px' }}>
-          <BookCover imgSrc={slide.cover} beforeShadow />
+          <BookCover id={slide.id} imgSrc={slide.cover} beforeShadow />
         </SwiperSlide>
       ))}
     </Swiper>

@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { styled } from "../../styles/stitches.config";
 
-export const TouchableBookStyle = styled('a', {
+export const TouchableBookStyle = styled(Link, {
   cursor: 'pointer',
 });
 

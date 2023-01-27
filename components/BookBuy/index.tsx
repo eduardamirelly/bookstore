@@ -8,9 +8,10 @@ interface BookBuyProps {
   imgSrc?: string;
   price: number;
   isFavorited: boolean;
+  id: string;
 }
 
-export const BookBuy = ({ imgSrc, price, isFavorited }: BookBuyProps) => {
+export const BookBuy = ({ imgSrc, price, isFavorited, id }: BookBuyProps) => {
   return (
     <Box
       css={{
@@ -19,7 +20,7 @@ export const BookBuy = ({ imgSrc, price, isFavorited }: BookBuyProps) => {
       }}
     >
       <Box>
-        <BookCover imgSrc={imgSrc} />
+        <BookCover id={id} imgSrc={imgSrc} />
       </Box>
 
       <Box
@@ -31,7 +32,7 @@ export const BookBuy = ({ imgSrc, price, isFavorited }: BookBuyProps) => {
         }}
       >
         <LabelPrice price={price.toFixed(2)} />
-        <BookMark />
+        <BookMark isFavorited={isFavorited} />
       </Box>
 
       <BuyButton />

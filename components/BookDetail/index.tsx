@@ -1,3 +1,4 @@
+import { Book } from '../../store/@types/books';
 import { Box } from '../../styles/Box';
 import { TextExtraLarge } from '../../styles/Texts/TextExtraLarge';
 import { TitleH2 } from '../../styles/Titles/TitleH2';
@@ -8,7 +9,11 @@ import { BuyNowButton } from '../BuyNowButton';
 import { CountBooks } from '../CountBooks';
 import { LabelInfo } from './components/LabelInfo';
 
-export const BookDetail = () => {
+interface BookDetailProps {
+  book?: Book;
+}
+
+export const BookDetail = ({ book }: BookDetailProps) => {
   return (
     <Box
       css={{
@@ -25,7 +30,7 @@ export const BookDetail = () => {
       }}
     >
       <BookCover
-        beforeShadow
+        // beforeShadow
         canRedirect={false}
         css={{
           width: '300px',

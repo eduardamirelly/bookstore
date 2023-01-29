@@ -13,6 +13,7 @@ interface ButtonLinkProps {
   beforeShadow?: 'orange' | 'blue';
   css?: Stitches.CSS;
   children?: React.ReactNode;
+  isOneExternalLink?: boolean;
 }
 
 export const ButtonLink: React.FC<ButtonLinkProps> = ({
@@ -25,20 +26,39 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
   beforeShadow,
   css,
   children,
+  isOneExternalLink = false,
 }) => {
   return (
-    <Link href={href}>
-      <RectButton
-        color={color}
-        colorText={colorText}
-        fontSize={fontSize}
-        borderRadius={borderRadius}
-        backgroundColorHover={backgroundColorHover}
-        beforeShadow={beforeShadow}
-        css={css}
-      >
-        {children}
-      </RectButton>
-    </Link>
+    <>
+      {!isOneExternalLink ? (
+        <Link href={href}>
+          <RectButton
+            color={color}
+            colorText={colorText}
+            fontSize={fontSize}
+            borderRadius={borderRadius}
+            backgroundColorHover={backgroundColorHover}
+            beforeShadow={beforeShadow}
+            css={css}
+          >
+            {children}
+          </RectButton>
+        </Link>
+      ) : (
+        <RectButton
+          href={href}
+          color={color}
+          colorText={colorText}
+          fontSize={fontSize}
+          borderRadius={borderRadius}
+          backgroundColorHover={backgroundColorHover}
+          beforeShadow={beforeShadow}
+          css={css}
+          target="_blank"
+        >
+          {children}
+        </RectButton>
+      )}
+    </>
   );
 };

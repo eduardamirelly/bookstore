@@ -26,7 +26,6 @@ export const CategoryBookSection: React.FC<CategoryBookProps> = ({
         )
       );
     }
-    console.log(booksFiltered);
   }, [books]);
 
   return (

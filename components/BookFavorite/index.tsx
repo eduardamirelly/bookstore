@@ -5,12 +5,13 @@ import { BookMarkerStyle, BookUnMarker } from './styles';
 
 interface BookFavoriteProps {
   imgSrc?: string;
+  id?: string;
 }
 
-export const BookFavorite = ({ imgSrc }: BookFavoriteProps) => {
+export const BookFavorite = ({ imgSrc, id }: BookFavoriteProps) => {
   return (
     <Box css={{ position: 'relative' }}>
-      <BookCover imgSrc={imgSrc} />
+      <BookCover id={id} imgSrc={imgSrc} />
 
       <BookMarkerStyle>
         <BookmarkSimple size={32} weight="regular" />

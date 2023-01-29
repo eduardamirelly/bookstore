@@ -77,7 +77,7 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
         {isFavorites ? (
           <>
             {books.map((book) => (
-              <BookFavorite key={book.id} imgSrc={book.cover} />
+              <BookFavorite key={book.id} id={book.id} imgSrc={book.cover} />
             ))}
           </>
         ) : (

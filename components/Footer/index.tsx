@@ -63,7 +63,8 @@ export const Footer = () => {
             </ButtonLink>
 
             <ButtonLink
-              href="/"
+              href="https://github.com/eduardamirelly"
+              isOneExternalLink
               borderRadius="full"
               beforeShadow="blue"
               backgroundColorHover="yellow"

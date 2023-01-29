@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { GithubLogo } from 'phosphor-react';
 import React from 'react';
 import { Box } from '../../styles/Box';
@@ -61,7 +60,8 @@ export const ErrorPage: React.FC<ErrorPageProps> = ({
         }}
       >
         <ButtonLink
-          href="/"
+          href="https://github.com/eduardamirelly"
+          isOneExternalLink
           borderRadius="full"
           beforeShadow="blue"
           backgroundColorHover="yellow"

@@ -32,6 +32,7 @@ export const BookDetail = ({ book }: BookDetailProps) => {
       <BookCover
         // beforeShadow
         canRedirect={false}
+        imgSrc={book?.cover}
         css={{
           width: '300px',
         }}
@@ -61,11 +62,11 @@ export const BookDetail = ({ book }: BookDetailProps) => {
               },
             }}
           >
-            A Hipótese do Amor
+            {book?.title}
           </TitleH2>
 
           <Box css={{ gap: '20px' }}>
-            <BookMark />
+            <BookMark isFavorited={book?.isFavorite} />
 
             <BuyButton
               css={{
@@ -80,15 +81,8 @@ export const BookDetail = ({ book }: BookDetailProps) => {
           </Box>
         </Box>
 
-        <LabelInfo>Author (a): Name Author</LabelInfo>
-        <LabelInfo>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-          turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-          fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus
-          elit sed risus. Maecenas eget condimentum velit, sit amet feugiat
-          lectus. Class aptent taciti sociosqu ad litora torquent per conubia
-          nostra, per inceptos himenaeos.
-        </LabelInfo>
+        <LabelInfo>Author (a): {book?.author}</LabelInfo>
+        <LabelInfo>{book?.description}</LabelInfo>
 
         <Box
           css={{
@@ -103,7 +97,9 @@ export const BookDetail = ({ book }: BookDetailProps) => {
             },
           }}
         >
-          <TextExtraLarge css={{ color: '$orange500' }}>$30.00</TextExtraLarge>
+          <TextExtraLarge css={{ color: '$orange500' }}>
+            ${book?.price.toFixed(2)}
+          </TextExtraLarge>
           <CountBooks />
         </Box>
 

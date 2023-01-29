@@ -47,7 +47,8 @@ export const Footer = () => {
             }}
           >
             <ButtonLink
-              href="/"
+              href="https://www.linkedin.com/in/eduarda-neves"
+              isOneExternalLink
               borderRadius="full"
               beforeShadow="blue"
               backgroundColorHover="yellow"
@@ -80,7 +81,8 @@ export const Footer = () => {
             </ButtonLink>
 
             <ButtonLink
-              href="/"
+              href="https://www.figma.com/@eduardamirelly"
+              isOneExternalLink
               borderRadius="full"
               beforeShadow="blue"
               backgroundColorHover="yellow"

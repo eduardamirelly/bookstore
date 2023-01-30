@@ -51,8 +51,7 @@ export const ShoppingCartButton = () => {
             paddingBlock: '10px',
           }}
         >
-          <BookInCart />
-          <BookInCart />
+          {/* <BookInCart book={} /> */}
         </Box>
 
         <Box

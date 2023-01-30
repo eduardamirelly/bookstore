@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { Book } from '../@types/books';
 
-export const BookSlice = createSlice({
+export const BooksSlice = createSlice({
   name: 'books',
   initialState: {
     data: [] as Book[],
@@ -26,6 +26,6 @@ export const {
   loadBooksRequest,
   loadBooksSuccess,
   loadBooksFailure,
-} = BookSlice.actions;
+} = BooksSlice.actions;
 
-export default BookSlice.reducer;
+export default BooksSlice.reducer;

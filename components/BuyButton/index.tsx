@@ -5,11 +5,12 @@ import { BuyButtonStyle } from './styles';
 
 interface BuyButtonProps {
   css?: Stitches.CSS;
+  onClick: () => void;
 }
 
-export const BuyButton: React.FC<BuyButtonProps> = ({ css }) => {
+export const BuyButton: React.FC<BuyButtonProps> = ({ css, onClick }) => {
   return (
-    <BuyButtonStyle css={css}>
+    <BuyButtonStyle css={css} onClick={onClick}>
       <ShoppingCartSimple size={32} weight="light" />
     </BuyButtonStyle>
   );

@@ -83,13 +83,7 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
         ) : (
           <>
             {books.map((book) => (
-              <BookBuy
-                key={book.id}
-                id={book.id}
-                imgSrc={book.cover}
-                isFavorited={book.isFavorite}
-                price={book.price}
-              />
+              <BookBuy key={book.id} book={book} />
             ))}
           </>
         )}

@@ -1,3 +1,6 @@
+import { useDispatch } from 'react-redux';
+import { Book } from '../../store/@types/books';
+import { addBookOnCart } from '../../store/features/booksOnCart';
 import { Box } from '../../styles/Box';
 import { BookCover } from '../BookCover';
 import { BookMark } from '../BookMark';
@@ -5,13 +8,16 @@ import { BuyButton } from '../BuyButton';
 import { LabelPrice } from '../LabelPrice';
 
 interface BookBuyProps {
-  imgSrc?: string;
-  price: number;
-  isFavorited: boolean;
-  id: string;
+  book: Book;
 }
 
-export const BookBuy = ({ imgSrc, price, isFavorited, id }: BookBuyProps) => {
+export const BookBuy = ({ book }: BookBuyProps) => {
+  const dispatch = useDispatch();
+
+  const handleAddBookOnCart = () => {
+    dispatch(addBookOnCart(book));
+  };
+
   return (
     <Box
       css={{
@@ -20,7 +26,7 @@ export const BookBuy = ({ imgSrc, price, isFavorited, id }: BookBuyProps) => {
       }}
     >
       <Box>
-        <BookCover id={id} imgSrc={imgSrc} />
+        <BookCover id={book.id} imgSrc={book.cover} />
       </Box>
 
       <Box
@@ -31,11 +37,11 @@ export const BookBuy = ({ imgSrc, price, isFavorited, id }: BookBuyProps) => {
           marginBlock: '10px',
         }}
       >
-        <LabelPrice price={price.toFixed(2)} />
-        <BookMark isFavorited={isFavorited} />
+        <LabelPrice price={book.price.toFixed(2)} />
+        <BookMark isFavorited={book.isFavorite} />
       </Box>
 
-      <BuyButton />
+      <BuyButton onClick={handleAddBookOnCart} />
     </Box>
   );
 };

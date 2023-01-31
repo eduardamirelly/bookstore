@@ -1,5 +1,6 @@
 import { CaretLeft, ShoppingCart } from 'phosphor-react';
 import { useState } from 'react';
+import { useReduxSelector } from '../../../../store';
 import { Box } from '../../../../styles/Box';
 import { IconClick } from '../../../../styles/IconClick';
 import { TextLarge } from '../../../../styles/Texts/TextLarge';
@@ -11,6 +12,8 @@ import { CartSidebarStyle, PanelCover } from './styles';
 
 export const ShoppingCartButton = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const booksOnCart = useReduxSelector((state) => state.booksOnCart.data);
 
   return (
     <>
@@ -37,7 +40,11 @@ export const ShoppingCartButton = () => {
           </IconClick>
 
           <TextSmall>
-            Your Cart <span>(02 items)</span>
+            Your Cart{' '}
+            <span>
+              ({`${booksOnCart.length < 10 ? '0' : ''}${booksOnCart.length}`}{' '}
+              items)
+            </span>
           </TextSmall>
         </Box>
 
@@ -51,8 +58,9 @@ export const ShoppingCartButton = () => {
             paddingBlock: '10px',
           }}
         >
-          <BookInCart />
-          <BookInCart />
+          {booksOnCart.map((book) => (
+            <BookInCart key={book.id} book={book} />
+          ))}
         </Box>
 
         <Box

@@ -1,4 +1,5 @@
 import { Trash } from 'phosphor-react';
+import { Book } from '../../../../../../store/@types/books';
 import { Box } from '../../../../../../styles/Box';
 import { IconClick } from '../../../../../../styles/IconClick';
 import { TextLarge } from '../../../../../../styles/Texts/TextLarge';
@@ -8,7 +9,11 @@ import { BookCover } from '../../../../../BookCover';
 import { CountBooks } from '../../../../../CountBooks';
 import { BookInCartStyle } from './styles';
 
-export const BookInCart = () => (
+interface BookInCartProps {
+  book: Book;
+}
+
+export const BookInCart = ({ book }: BookInCartProps) => (
   <BookInCartStyle>
     <Box
       css={{
@@ -34,8 +39,8 @@ export const BookInCart = () => (
           }}
         >
           <Box css={{ flexDirection: 'column', gap: '10px' }}>
-            <TextSmall>Book Name...</TextSmall>
-            <TextXSmall>Author Name...</TextXSmall>
+            <TextSmall>{book.title}</TextSmall>
+            <TextXSmall>{book.author}</TextXSmall>
           </Box>
 
           <CountBooks />
@@ -50,7 +55,7 @@ export const BookInCart = () => (
           }}
         >
           <TextLarge css={{ color: '$orange500', marginTop: '-5px' }}>
-            $30.00
+            ${book.price}
           </TextLarge>
 
           <IconClick>

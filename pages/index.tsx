@@ -13,6 +13,7 @@ import { Container } from '../styles/Container';
 
 const Home: NextPage = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(loadBooksRequest());
     dispatch(loadCategoriesRequest());

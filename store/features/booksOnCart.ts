@@ -9,7 +9,11 @@ export const BooksOnCartSlice = createSlice({
   reducers: {
     addBookOnCart(state, action) {
       const book = action.payload;
-      state.data = [...state.data,...book];
+      const bookAlreadyExists = state.data.filter((item) => item.id === book.id);
+
+      if(bookAlreadyExists.length < 1) {
+        state.data = [...state.data, book];
+      }
     },
   }
 })

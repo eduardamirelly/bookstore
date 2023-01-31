@@ -1,4 +1,6 @@
+import { useDispatch } from 'react-redux';
 import { Book } from '../../store/@types/books';
+import { addBookOnCart } from '../../store/features/booksOnCart';
 import { Box } from '../../styles/Box';
 import { BookCover } from '../BookCover';
 import { BookMark } from '../BookMark';
@@ -10,6 +12,12 @@ interface BookBuyProps {
 }
 
 export const BookBuy = ({ book }: BookBuyProps) => {
+  const dispatch = useDispatch();
+
+  const handleAddBookOnCart = () => {
+    dispatch(addBookOnCart(book));
+  };
+
   return (
     <Box
       css={{
@@ -33,7 +41,7 @@ export const BookBuy = ({ book }: BookBuyProps) => {
         <BookMark isFavorited={book.isFavorite} />
       </Box>
 
-      <BuyButton onClick={() => {}} />
+      <BuyButton onClick={handleAddBookOnCart} />
     </Box>
   );
 };

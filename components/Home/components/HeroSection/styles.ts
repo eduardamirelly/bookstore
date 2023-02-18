@@ -27,6 +27,7 @@ export const HeroImage = styled('div', {
 
     marginTop: '-38px',
     marginLeft: '-46px',
+    zIndex: '-1',
   },
 
   display: 'none',

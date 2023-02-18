@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { styled } from "../../../../styles/stitches.config";
 
-export const LogoStyle = styled('a', {
+export const LogoStyle = styled(Link, {
   color: '$gray800',
   display: 'flex',
   alignItems: 'center',

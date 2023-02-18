@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { styled } from "../stitches.config";
 
-export const RectButton = styled('a', {
+export const RectButton = styled(Link, {
   padding: '.5rem',
   fontFamily: '$secondary',
   color: '$gray800',

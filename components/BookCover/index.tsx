@@ -29,19 +29,17 @@ export const BookCover: React.FC<BookCoverProps> = ({
           : '#'
       }
     >
-      <a>
-        <BookCoverStyle css={css}>
-          <Image
-            src={imgSrc}
-            width={200}
-            height={298}
-            layout="responsive"
-            objectFit="cover"
-            alt=""
-          />
-        </BookCoverStyle>
-        {beforeShadow && <AfterBlock />}
-      </a>
+      <BookCoverStyle css={css}>
+        <Image
+          src={imgSrc}
+          width={200}
+          height={298}
+          layout="responsive"
+          objectFit="cover"
+          alt=""
+        />
+      </BookCoverStyle>
+      {beforeShadow && <AfterBlock />}
     </TouchableBookStyle>
   );
 };

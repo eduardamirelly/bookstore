@@ -1,5 +1,4 @@
 import type * as Stitches from '@stitches/react';
-import Link from 'next/link';
 import React from 'react';
 import { RectButton } from '../../styles/RectButton';
 
@@ -29,36 +28,18 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
   isOneExternalLink = false,
 }) => {
   return (
-    <>
-      {!isOneExternalLink ? (
-        <Link href={href}>
-          <RectButton
-            color={color}
-            colorText={colorText}
-            fontSize={fontSize}
-            borderRadius={borderRadius}
-            backgroundColorHover={backgroundColorHover}
-            beforeShadow={beforeShadow}
-            css={css}
-          >
-            {children}
-          </RectButton>
-        </Link>
-      ) : (
-        <RectButton
-          href={href}
-          color={color}
-          colorText={colorText}
-          fontSize={fontSize}
-          borderRadius={borderRadius}
-          backgroundColorHover={backgroundColorHover}
-          beforeShadow={beforeShadow}
-          css={css}
-          target="_blank"
-        >
-          {children}
-        </RectButton>
-      )}
-    </>
+    <RectButton
+      href={href}
+      color={color}
+      colorText={colorText}
+      fontSize={fontSize}
+      borderRadius={borderRadius}
+      backgroundColorHover={backgroundColorHover}
+      beforeShadow={beforeShadow}
+      css={css}
+      target={isOneExternalLink ? "_blank" : "_self"}
+    >
+      {children}
+    </RectButton>
   );
 };

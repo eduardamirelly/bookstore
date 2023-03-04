@@ -41,6 +41,9 @@ export const Box = styled('div', {
       wrap: {
         flexWrap: 'wrap',
       },
+      rwrap: {
+        flexWrap: 'wrap-reverse',
+      },
     },
     gap: {
       10: {
@@ -67,6 +70,9 @@ export const Box = styled('div', {
       50: {
         gap: '3.125rem',
       },
-    }
+      80: {
+        gap: '5rem',
+      },
+    },
   },
 });

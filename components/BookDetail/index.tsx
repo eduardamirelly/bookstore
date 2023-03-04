@@ -16,12 +16,12 @@ interface BookDetailProps {
 export const BookDetail = ({ book }: BookDetailProps) => {
   return (
     <Box
+      direction="column"
+      justify="center"
+      align="center"
+      gap="80"
       css={{
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: '80px',
         marginTop: '80px',
-        flexDirection: 'column',
 
         '@lg': {
           gap: '138px',
@@ -30,7 +30,6 @@ export const BookDetail = ({ book }: BookDetailProps) => {
       }}
     >
       <BookCover
-        // beforeShadow
         canRedirect={false}
         imgSrc={book?.cover}
         css={{
@@ -38,15 +37,13 @@ export const BookDetail = ({ book }: BookDetailProps) => {
         }}
       />
 
-      <Box css={{ flexDirection: 'column', justifyContent: 'flex-start' }}>
+      <Box direction="column" justify="start">
         <Box
+          direction="column"
+          justify="between"
+          align="center"
+          gap="30"
           css={{
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '30px',
-
-            flexDirection: 'column',
-
             '@lg': {
               gap: '100px',
               flexDirection: 'row',
@@ -65,10 +62,11 @@ export const BookDetail = ({ book }: BookDetailProps) => {
             {book?.title}
           </TitleH2>
 
-          <Box css={{ gap: '20px' }}>
+          <Box gap="20">
             <BookMark isFavorited={book?.isFavorite} />
 
             <BuyButton
+              onClick={() => {}}
               css={{
                 minWidth: '57px',
                 height: '48px',
@@ -85,11 +83,10 @@ export const BookDetail = ({ book }: BookDetailProps) => {
         <LabelInfo>{book?.description}</LabelInfo>
 
         <Box
+          justify="between"
+          align="center"
+          gap="50"
           css={{
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '50px',
-
             marginTop: '50px',
 
             '@lg': {
@@ -104,15 +101,15 @@ export const BookDetail = ({ book }: BookDetailProps) => {
         </Box>
 
         <Box
+          gap="20"
+          wrap="rwrap"
           css={{
-            gap: '18px',
             marginTop: '20px',
-            flexWrap: 'wrap-reverse',
 
             '@md': { flexWrap: 'nowrap' },
           }}
         >
-          <BuyButton />
+          <BuyButton onClick={() => {}} />
           <BuyNowButton />
         </Box>
       </Box>

@@ -52,6 +52,9 @@ export const Box = styled('div', {
       38: {
         gap: '2.375rem',
       },
+      50: {
+        gap: '3.125rem',
+      },
     }
   },
 });

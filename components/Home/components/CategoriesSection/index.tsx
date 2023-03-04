@@ -9,12 +9,12 @@ export const CategoriesSection = () => {
 
   return (
     <Box
+      direction="column"
+      justify="center"
+      align="center"
+      gap="38"
       css={{
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column',
         marginTop: '150px',
-        gap: '36px',
 
         '@lg': {
           marginTop: '220px',
@@ -34,12 +34,12 @@ export const CategoriesSection = () => {
       </TitleH2>
 
       <Box
+        direction="column"
+        justify="between"
+        align="center"
+        gap="50"
         css={{
           width: '100%',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          gap: '50px',
-          flexDirection: 'column',
 
           '@md': {
             flexDirection: 'row',

@@ -20,8 +20,8 @@ export const BookBuy = ({ book }: BookBuyProps) => {
 
   return (
     <Box
+      direction="column"
       css={{
-        flexDirection: 'column',
         maxWidth: '200px',
       }}
     >
@@ -30,10 +30,9 @@ export const BookBuy = ({ book }: BookBuyProps) => {
       </Box>
 
       <Box
+        justify="between"
+        align="center"
         css={{
-          alignItems: 'center',
-          justifyContent: 'space-between',
-
           marginBlock: '10px',
         }}
       >

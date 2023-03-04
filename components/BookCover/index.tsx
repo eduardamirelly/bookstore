@@ -34,8 +34,6 @@ export const BookCover: React.FC<BookCoverProps> = ({
           src={imgSrc}
           width={200}
           height={298}
-          layout="responsive"
-          objectFit="cover"
           alt=""
         />
       </BookCoverStyle>

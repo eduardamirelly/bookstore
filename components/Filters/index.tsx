@@ -13,21 +13,20 @@ export const Filters = ({ children }: FiltersProps) => {
   });
   return (
     <Box
+      direction="column"
       css={{
         width: '100%',
-        flexDirection: 'column',
         marginTop: '20px',
         '@md': { marginTop: '52px' },
       }}
     >
       <Box
+        direction="column"
+        justify="between"
+        align="center"
+        gap="40"
         css={{
-          alignItems: 'center',
-          justifyContent: 'space-between',
           marginBottom: '30px',
-          gap: '40px',
-
-          flexDirection: 'column',
 
           '@lg': {
             gap: '20px',
@@ -40,11 +39,10 @@ export const Filters = ({ children }: FiltersProps) => {
         </TextLarge>
 
         <Box
+          justify="end"
+          gap="20"
+          wrap="wrap"
           css={{
-            gap: '17px',
-            flexWrap: 'wrap',
-            justifyContent: 'flex-end',
-
             '@lg': {
               flexWrap: 'nowrap',
             },

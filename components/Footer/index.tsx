@@ -8,12 +8,11 @@ export const Footer = () => {
   return (
     <footer>
       <Box
+        direction="column"
+        justify="center"
+        align="center"
+        gap="20"
         css={{
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          gap: '20px',
-
           marginTop: '150px',
           marginBottom: '114px',
 
@@ -25,13 +24,12 @@ export const Footer = () => {
         <DashLine />
 
         <Box
+          direction="column"
+          justify="between"
+          align="center"
+          gap="45"
           css={{
             width: '100%',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-
-            flexDirection: 'column',
-            gap: '45px',
             marginTop: '50px',
 
             '@md': {
@@ -41,11 +39,7 @@ export const Footer = () => {
         >
           <TextMedium>BookStore Project</TextMedium>
 
-          <Box
-            css={{
-              gap: '22px',
-            }}
-          >
+          <Box gap="20">
             <ButtonLink
               href="https://www.linkedin.com/in/eduarda-neves"
               isOneExternalLink

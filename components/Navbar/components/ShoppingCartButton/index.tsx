@@ -34,7 +34,7 @@ export const ShoppingCartButton = () => {
             : {}
         }
       >
-        <Box css={{ alignItems: 'center', gap: '10px', paddingInline: '20px' }}>
+        <Box align="center" gap="10" css={{ paddingInline: '20px' }}>
           <IconClick onClick={() => setIsOpen(false)}>
             <CaretLeft size={32} weight="light" />
           </IconClick>
@@ -49,13 +49,13 @@ export const ShoppingCartButton = () => {
         </Box>
 
         <Box
+          direction="column"
+          gap="14"
           css={{
-            flexDirection: 'column',
-            marginTop: '20px',
-            gap: '14px',
-            maxHeight: 'calc(100vh - 320px)',
+            marginTop: '1.25rem',
+            maxHeight: 'calc(100vh - 20rem)',
             overflowY: 'auto',
-            paddingBlock: '10px',
+            paddingBlock: '.625rem',
           }}
         >
           {booksOnCart.map((book) => (
@@ -64,28 +64,28 @@ export const ShoppingCartButton = () => {
         </Box>
 
         <Box
+          direction="column"
+          gap="38"
           css={{
             width: '100%',
             borderTop: '2px solid $gray800',
             borderLeft: '2px solid $gray800',
 
-            borderTopLeftRadius: '20px',
-            paddingInline: '20px',
-            paddingBlock: '30px',
+            borderTopLeftRadius: '1.25rem',
+            paddingInline: '1.25rem',
+            paddingBlock: '1.875rem',
 
             position: 'absolute',
             bottom: '0',
 
-            flexDirection: 'column',
-            gap: '38px',
             backgroundColor: 'white',
           }}
         >
           <Box
+            justify="between"
+            align="center"
             css={{
               width: '100%',
-              alignItems: 'center',
-              justifyContent: 'space-between',
             }}
           >
             <TextLarge>Subtotal:</TextLarge>

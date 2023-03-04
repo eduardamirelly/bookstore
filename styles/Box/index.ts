@@ -25,5 +25,16 @@ export const Box = styled('div', {
         alignItems: 'center',
       },
     },
+    gap: {
+      10: {
+        gap: '.625rem',
+      },
+      14: {
+        gap: '.875rem',
+      },
+      38: {
+        gap: '2.375rem',
+      },
+    }
   },
 });

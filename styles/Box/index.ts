@@ -25,6 +25,9 @@ export const Box = styled('div', {
       end: {
         justifyContent: 'flex-end',
       },
+      start: {
+        justifyContent: 'flex-start',
+      },
     },
     align: {
       center: {

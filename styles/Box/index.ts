@@ -19,6 +19,9 @@ export const Box = styled('div', {
       between: {
         justifyContent: 'space-between',
       },
+      around: {
+        justifyContent: 'space-around',
+      },
     },
     align: {
       center: {
@@ -28,12 +31,23 @@ export const Box = styled('div', {
         alignItems: 'flex-end',
       },
     },
+    wrap: {
+      wrap: {
+        flexWrap: 'wrap',
+      },
+    },
     gap: {
       10: {
         gap: '.625rem',
       },
       14: {
         gap: '.875rem',
+      },
+      20: {
+        gap: '1.25rem',
+      },
+      30: {
+        gap: '1.875rem',
       },
       38: {
         gap: '2.375rem',

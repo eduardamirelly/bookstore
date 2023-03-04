@@ -11,9 +11,9 @@ export const TrendingBooksSection = () => {
 
   return (
     <Box
+      direction="column"
+      align="center"
       css={{
-        alignItems: 'center',
-        flexDirection: 'column',
         marginTop: '150px',
 
         '@lg': {

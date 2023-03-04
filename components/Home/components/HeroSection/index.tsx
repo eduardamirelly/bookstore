@@ -12,12 +12,12 @@ import { DashLine } from '../../../../styles/DashLine';
 export const HeroSection = () => {
   return (
     <Box
+      justify="around"
+      align="center"
+      gap="30"
+      wrap="wrap"
       css={{
-        alignItems: 'center',
         marginTop: '40px',
-        gap: '30px',
-        justifyContent: 'space-around',
-        flexWrap: 'wrap',
 
         '@lg': {
           flexWrap: 'nowrap',
@@ -39,20 +39,15 @@ export const HeroSection = () => {
 
         <TextSmall>Explore our catalog and find your next read.</TextSmall>
 
-        <Box
-          css={{
-            flexDirection: 'column',
-          }}
-        >
+        <Box direction="column">
           <InputSearch />
 
           <Box
+            align="center"
+            justify="center"
+            gap="20"
+            wrap="wrap"
             css={{
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '20px',
-              flexWrap: 'wrap',
-
               '@lg': {
                 maxWidth: '490px',
               },
@@ -96,9 +91,6 @@ export const HeroSection = () => {
           width={485}
           height={503}
           alt=""
-          layout="responsive"
-          objectFit="cover"
-          // priority
         />
       </HeroImage>
     </Box>

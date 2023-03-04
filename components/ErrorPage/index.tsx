@@ -18,11 +18,11 @@ export const ErrorPage: React.FC<ErrorPageProps> = ({
 }) => {
   return (
     <Box
+      direction="column"
+      justify="center"
+      align="center"
       css={{
         minHeight: '100vh',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
         textAlign: 'center',
         paddingBlock: '40px',
       }}
@@ -52,11 +52,11 @@ export const ErrorPage: React.FC<ErrorPageProps> = ({
       </ButtonLink>
 
       <Box
+        justify="center"
+        align="center"
+        gap="20"
         css={{
-          justifyContent: 'center',
-          alignItems: 'center',
           marginTop: '1.5rem',
-          gap: '20px',
         }}
       >
         <ButtonLink

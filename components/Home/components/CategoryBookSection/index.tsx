@@ -30,12 +30,12 @@ export const CategoryBookSection: React.FC<CategoryBookProps> = ({
 
   return (
     <Box
+      direction="column"
+      justify="center"
+      align="center"
+      gap="38"
       css={{
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column',
         marginTop: '150px',
-        gap: '36px',
       }}
     >
       <TitleH2
@@ -51,9 +51,9 @@ export const CategoryBookSection: React.FC<CategoryBookProps> = ({
       </TitleH2>
 
       <Box
+        align="center"
         css={{
           width: '100%',
-          alignItems: 'center',
         }}
       >
         {books.length > 0 ? (

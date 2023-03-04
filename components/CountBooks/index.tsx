@@ -7,7 +7,7 @@ export const CountBooks = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <Box css={{ gap: '10px', alignItems: 'center' }}>
+    <Box align="center" gap="10">
       <ButtonCount onClick={() => (count > 0 ? setCount(count - 1) : () => {})}>
         <MinusCircle size={24} weight="regular" />
       </ButtonCount>

@@ -32,15 +32,13 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
 
   return (
     <Box
-      css={{
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
+      direction="column"
+      justify="center"
+      align="center"
     >
       <Box
+        justify="center"
         css={{
-          justifyContent: 'center',
           width: '100%',
           '@md': { width: '535px' },
         }}
@@ -58,16 +56,14 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
       </Filters>
 
       <Box
+        direction="column"
+        justify="start"
+        align="center"
+        gap="30"
+        wrap="wrap"
         css={{
           width: '100%',
-          justifyContent: 'flex-start',
-          alignItems: 'center',
-
-          gap: '30px',
           marginTop: '70px',
-
-          flexWrap: 'wrap',
-          flexDirection: 'column',
 
           '@sm': {
             flexDirection: 'row',

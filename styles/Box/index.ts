@@ -24,6 +24,9 @@ export const Box = styled('div', {
       center: {
         alignItems: 'center',
       },
+      end: {
+        alignItems: 'flex-end',
+      },
     },
     gap: {
       10: {

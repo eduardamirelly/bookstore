@@ -16,9 +16,9 @@ interface BookInCartProps {
 export const BookInCart = ({ book }: BookInCartProps) => (
   <BookInCartStyle>
     <Box
+      justify="between"
       css={{
-        justifyContent: 'space-between',
-        gap: '20px',
+        gap: '1.25rem',
       }}
     >
       <BookCover
@@ -31,14 +31,14 @@ export const BookInCart = ({ book }: BookInCartProps) => (
 
       <Box css={{ flexGrow: 2 }}>
         <Box
+          direction="column"
+          justify="between"
           css={{
             color: '$gray600',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
             flexGrow: '2',
           }}
         >
-          <Box css={{ flexDirection: 'column', gap: '10px' }}>
+          <Box direction="column" gap="10">
             <TextSmall>{book.title}</TextSmall>
             <TextXSmall>{book.author}</TextXSmall>
           </Box>
@@ -47,11 +47,11 @@ export const BookInCart = ({ book }: BookInCartProps) => (
         </Box>
 
         <Box
+          direction="column"
+          justify="between"
+          align="end"
           css={{
             color: '$gray600',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            alignItems: 'flex-end',
           }}
         >
           <TextLarge css={{ color: '$orange500', marginTop: '-5px' }}>

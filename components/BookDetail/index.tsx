@@ -32,8 +32,11 @@ export const BookDetail = ({ book }: BookDetailProps) => {
       <BookCover
         canRedirect={false}
         imgSrc={book?.cover}
+        width={280}
+        height={417}
         css={{
-          width: '300px',
+          width: '280px',
+          height: '417px',
         }}
       />
 

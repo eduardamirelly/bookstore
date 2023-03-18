@@ -6,8 +6,8 @@ export const TouchableBookStyle = styled(Link, {
 });
 
 export const BookCoverStyle = styled('div', {
-  minWidth: '200px',
-  minHeight: '298px',
+  width: '200px',
+  height: '298px',
   position: 'relative',
   overflow: 'hidden',
   borderRadius: '10px',

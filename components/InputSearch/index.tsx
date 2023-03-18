@@ -6,18 +6,29 @@ import {
   InputSearchStyle,
 } from './styles';
 
-export const InputSearch = () => {
+interface InputSearchProps {
+  placeholder?: string;
+  onInput?: () => void;
+  onClick?: () => void;
+}
+
+export const InputSearch = ({
+  placeholder = 'Type the name of book or author...',
+  onInput,
+  onClick,
+}: InputSearchProps) => {
   return (
     <InputSearchContainer>
       <InputSearchStyle
         type="search"
         name="search"
         id="search"
-        placeholder="Type the name of book or author..."
+        placeholder={placeholder}
+        onInput={onInput}
       />
       <AfterBlock />
 
-      <ButtonSearch type="submit">
+      <ButtonSearch type="submit" onClick={onClick}>
         <MagnifyingGlass size={24} weight="regular" />
       </ButtonSearch>
     </InputSearchContainer>

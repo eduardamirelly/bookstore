@@ -9,6 +9,8 @@ interface BookCoverProps {
   css?: Stitches.CSS;
   id?: string;
   canRedirect?: boolean;
+  width?: number;
+  height?: number;
 }
 
 export const BookCover: React.FC<BookCoverProps> = ({
@@ -17,6 +19,8 @@ export const BookCover: React.FC<BookCoverProps> = ({
   css,
   id,
   canRedirect = true,
+  width = 200,
+  height = 298,
 }) => {
   return (
     <TouchableBookStyle
@@ -32,8 +36,8 @@ export const BookCover: React.FC<BookCoverProps> = ({
       <BookCoverStyle css={css}>
         <Image
           src={imgSrc}
-          width={200}
-          height={298}
+          width={width}
+          height={height}
           alt=""
         />
       </BookCoverStyle>

@@ -1,15 +1,13 @@
 import type { NextPage } from 'next';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Footer } from '../components/Footer';
 import { CategoriesSection } from '../components/Home/components/CategoriesSection';
 import { CategoryBookSection } from '../components/Home/components/CategoryBookSection';
 import { HeroSection } from '../components/Home/components/HeroSection';
 import { TrendingBooksSection } from '../components/Home/components/TrendingBooksSection';
-import { Navbar } from '../components/Navbar';
 import { loadBooksRequest } from '../store/features/books';
 import { loadCategoriesRequest } from '../store/features/categories';
-import { Container } from '../styles/Container';
+import Layout from '../templates/Layout';
 
 const Home: NextPage = () => {
   const dispatch = useDispatch();
@@ -20,15 +18,13 @@ const Home: NextPage = () => {
   }, []);
 
   return (
-    <Container>
-      <Navbar />
+    <Layout>
       <HeroSection />
       <TrendingBooksSection />
       <CategoriesSection />
       <CategoryBookSection category="Romance" />
       <CategoryBookSection category="Adventure" />
-      <Footer />
-    </Container>
+    </Layout>
   );
 };
 

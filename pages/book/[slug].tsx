@@ -3,12 +3,10 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { BookDetail } from '../../components/BookDetail';
-import { Footer } from '../../components/Footer';
 import { CategoryBookSection } from '../../components/Home/components/CategoryBookSection';
-import { Navbar } from '../../components/Navbar';
 import { useReduxSelector } from '../../store';
 import { loadBooksRequest } from '../../store/features/books';
-import { Container } from '../../styles/Container';
+import Layout from '../../templates/Layout';
 
 const Book: NextPage = () => {
   const dispatch = useDispatch();
@@ -24,12 +22,10 @@ const Book: NextPage = () => {
 
   return (
     <>
-      <Container>
-        <Navbar />
+      <Layout>
         <BookDetail book={bookDetail} />
         <CategoryBookSection category="View More" />
-        <Footer />
-      </Container>
+      </Layout>
     </>
   );
 };

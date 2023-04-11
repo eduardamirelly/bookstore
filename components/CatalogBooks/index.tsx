@@ -7,6 +7,7 @@ import { BookFavorite } from '../BookFavorite';
 import { Filters } from '../Filters';
 import { SelectInput } from '../Filters/components/SelectInput';
 import { InputSearch } from '../InputSearch';
+import { useSearch } from '../../hooks/useSearch';
 
 interface CatalogBooksProps {
   isFavorites: boolean;
@@ -30,6 +31,8 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
     }
   }, [categories]);
 
+  const { handleInputText } = useSearch();
+
   return (
     <Box
       direction="column"
@@ -43,7 +46,7 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
           '@md': { width: '535px' },
         }}
       >
-        <InputSearch />
+        <InputSearch onChange={handleInputText} />
       </Box>
 
       <Filters>

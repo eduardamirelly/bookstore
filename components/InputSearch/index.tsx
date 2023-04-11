@@ -5,16 +5,17 @@ import {
   InputSearchContainer,
   InputSearchStyle,
 } from './styles';
+import React from 'react';
 
 interface InputSearchProps {
   placeholder?: string;
-  onInput?: () => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onClick?: () => void;
 }
 
 export const InputSearch = ({
   placeholder = 'Type the name of book or author...',
-  onInput,
+  onChange,
   onClick,
 }: InputSearchProps) => {
   return (
@@ -24,7 +25,7 @@ export const InputSearch = ({
         name="search"
         id="search"
         placeholder={placeholder}
-        onInput={onInput}
+        onChange={onChange}
       />
       <AfterBlock />
 

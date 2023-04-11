@@ -8,8 +8,12 @@ import { InputSearch } from '../../../InputSearch';
 import { Binoculars } from 'phosphor-react';
 import { GifBox, HeroHeader, HeroImage } from './styles';
 import { DashLine } from '../../../../styles/DashLine';
+import { useSearch } from '../../../../hooks/useSearch';
 
 export const HeroSection = () => {
+
+  const { handleInputText } = useSearch();
+
   return (
     <Box
       justify="around"
@@ -40,7 +44,7 @@ export const HeroSection = () => {
         <TextSmall>Explore our catalog and find your next read.</TextSmall>
 
         <Box direction="column">
-          <InputSearch />
+          <InputSearch onChange={handleInputText} />
 
           <Box
             align="center"

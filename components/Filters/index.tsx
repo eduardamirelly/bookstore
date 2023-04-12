@@ -5,9 +5,10 @@ import { TextLarge } from '../../styles/Texts/TextLarge';
 
 interface FiltersProps {
   children: React.ReactNode;
+  valueSearch: string;
 }
 
-export const Filters = ({ children }: FiltersProps) => {
+export const Filters = ({ children, valueSearch = '*' }: FiltersProps) => {
   const TextBlueResult = styled('span', {
     color: '$blue500',
   });
@@ -35,7 +36,7 @@ export const Filters = ({ children }: FiltersProps) => {
         }}
       >
         <TextLarge css={{ fontFamily: '$primary', textAlign: 'center' }}>
-          Results "<TextBlueResult>Name book or name author</TextBlueResult>"
+          Results "<TextBlueResult>{valueSearch}</TextBlueResult>"
         </TextLarge>
 
         <Box

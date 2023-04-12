@@ -31,7 +31,7 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
     }
   }, [categories]);
 
-  const { handleInputText } = useSearch();
+  const { handleInputText, search } = useSearch();
 
   return (
     <Box
@@ -49,7 +49,7 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
         <InputSearch onChange={handleInputText} />
       </Box>
 
-      <Filters>
+      <Filters valueSearch={search}>
         <SelectInput
           selectInitial="Categories"
           collection={optionsCategory}

@@ -56,7 +56,7 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
           css={{ width: '308px' }}
         />
         <SelectInput selectInitial="Sort By" collection={['Book title']} css={{ width: '168px' }} />
-        <SelectInput selectInitial="Order By" collection={['ASC', 'DESC']} css={{ width: '168px' }} />
+        <SelectInput isRequired selectInitial="Order By" collection={['ASC', 'DESC']} css={{ width: '168px' }} />
       </Filters>
 
       <Box

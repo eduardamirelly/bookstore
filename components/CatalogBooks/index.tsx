@@ -31,7 +31,7 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
     }
   }, [categories]);
 
-  const { handleInputText, search } = useSearch();
+  const { handleInputText, handleOrderBy, search } = useSearch();
 
   return (
     <Box
@@ -51,12 +51,13 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
 
       <Filters valueSearch={search}>
         <SelectInput
+          onSelect={() => {}}
           selectInitial="Categories"
           collection={optionsCategory}
           css={{ width: '308px' }}
         />
-        <SelectInput selectInitial="Sort By" collection={['Book title']} css={{ width: '168px' }} />
-        <SelectInput isRequired selectInitial="Order By" collection={['ASC', 'DESC']} css={{ width: '168px' }} />
+        <SelectInput onSelect={() => {}} selectInitial="Sort By" collection={['Book title']} css={{ width: '168px' }} />
+        <SelectInput onSelect={handleOrderBy} isRequired selectInitial="Order By" collection={['ASC', 'DESC']} css={{ width: '168px' }} />
       </Filters>
 
       <Box

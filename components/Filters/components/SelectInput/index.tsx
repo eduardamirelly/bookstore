@@ -11,6 +11,7 @@ interface SelectProps {
   css?: Stitches.CSS;
   collection?: string[];
   isRequired?: boolean;
+  onSelect: (value: string) => void;
 }
 
 export const SelectInput: React.FC<SelectProps> = ({
@@ -18,9 +19,15 @@ export const SelectInput: React.FC<SelectProps> = ({
   css,
   collection = ['First Added', 'Last Added'],
   isRequired = false,
+  onSelect,
 }) => {
   const [nameSelect, setNameSelect] = useState(selectInitial);
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleSelectValue = (value: string) => {
+    setNameSelect(value);
+    onSelect(value);
+  }
 
   return (
     <Box onClick={() => setIsOpen(!isOpen)} css={{ position: 'relative' }}>
@@ -34,11 +41,11 @@ export const SelectInput: React.FC<SelectProps> = ({
       {isOpen && (
         <OptionsStyle>
           {!isRequired && (
-            <OptionSelect onClick={() => setNameSelect(selectInitial)} key={0} option={'None'} />
+            <OptionSelect onClick={() => handleSelectValue(selectInitial)} key={0} option={'None'} />
           )}
 
           {collection.map((collect, index) => (
-            <OptionSelect onClick={() => setNameSelect(collect)} key={index + 1} option={collect} />
+            <OptionSelect onClick={() => handleSelectValue(collect)} key={index + 1} option={collect} />
           ))}
         </OptionsStyle>
       )}

@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useReduxSelector } from '../../store';
-import { Book } from '../../store/@types/books';
 import { Box } from '../../styles/Box';
 import { BookBuy } from '../BookBuy';
 import { BookFavorite } from '../BookFavorite';
@@ -10,16 +9,22 @@ import { InputSearch } from '../InputSearch';
 import { useSearch } from '../../hooks/useSearch';
 
 interface CatalogBooksProps {
-  isFavorites: boolean;
-  books: Book[];
+  isFavorite: boolean;
 }
 
 export const CatalogBooks: React.FC<CatalogBooksProps> = ({
-  isFavorites,
-  books,
+  isFavorite,
 }) => {
   const categories = useReduxSelector((state) => state.categories.data);
   const [optionsCategory, setOptionsCategory] = useState<string[]>([]);
+
+  const {
+    handleInputText,
+    handleOrderBy,
+    handleSetBooksFiltered,
+    search,
+    booksFiltered,
+  } = useSearch();
 
   useEffect(() => {
     if (categories.length > 0) {
@@ -29,9 +34,11 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
         })
       );
     }
-  }, [categories]);
 
-  const { handleInputText, handleOrderBy, search } = useSearch();
+    if (isFavorite) {
+      handleSetBooksFiltered(booksFiltered.filter((book) => book.isFavorite));
+    }
+  }, [categories, booksFiltered]);
 
   return (
     <Box
@@ -46,7 +53,7 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
           '@md': { width: '535px' },
         }}
       >
-        <InputSearch onChange={handleInputText} />
+        <InputSearch onChange={(e) => handleInputText(e.target.value)} />
       </Box>
 
       <Filters valueSearch={search}>
@@ -75,15 +82,15 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
           },
         }}
       >
-        {isFavorites ? (
+        {isFavorite ? (
           <>
-            {books.map((book) => (
+            {booksFiltered.map((book) => (
               <BookFavorite key={book.id} id={book.id} imgSrc={book.cover} />
             ))}
           </>
         ) : (
           <>
-            {books.map((book) => (
+            {booksFiltered.map((book) => (
               <BookBuy key={book.id} book={book} />
             ))}
           </>

@@ -3,6 +3,7 @@ import { useReduxSelector } from '../../../../store';
 import { Box } from '../../../../styles/Box';
 import { TitleH2 } from '../../../../styles/Titles/TitleH2';
 import { ButtonLink } from '../../../ButtonLink';
+import { Loading } from '../../../Loading';
 
 export const CategoriesSection = () => {
   const categories = useReduxSelector((state) => state.categories.data);
@@ -46,28 +47,33 @@ export const CategoriesSection = () => {
           },
         }}
       >
-        {categories.map((category) => (
-          <ButtonLink
-            key={category.id}
-            href="/"
-            borderRadius="small"
-            fontSize="large"
-            backgroundColorHover="yellow"
-            beforeShadow="orange"
-            css={{
-              height: '80px',
-              width: '100%',
-              paddingInline: '1rem',
-              paddingBlock: '1.5rem',
+        {categories.length > 0 ?
+          categories.map((category) => (
+              <ButtonLink
+                key={category.id}
+                href="/"
+                borderRadius="small"
+                fontSize="large"
+                backgroundColorHover="yellow"
+                beforeShadow="orange"
+                css={{
+                  height: '80px',
+                  width: '100%',
+                  paddingInline: '1rem',
+                  paddingBlock: '1.5rem',
 
-              '@md': {
-                width: '388px',
-              },
-            }}
-          >
-            {category.name}
-          </ButtonLink>
-        ))}
+                  '@md': {
+                    width: '388px',
+                  },
+                }}
+              >
+                {category.name}
+              </ButtonLink>
+            )
+          ) : (
+            <Loading cssSvg={{ width: '3rem' }} />
+          )
+        }
       </Box>
     </Box>
   );

@@ -15,7 +15,7 @@ interface CatalogBooksProps {
 export const CatalogBooks: React.FC<CatalogBooksProps> = ({
   isFavorite,
 }) => {
-  const categories = useReduxSelector((state) => state.categories.data);
+  const categories = useReduxSelector((state) => state.categories.data) || [];
   const [optionsCategory, setOptionsCategory] = useState<string[]>([]);
 
   const {
@@ -35,7 +35,7 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
       );
     }
 
-    if (isFavorite) {
+    if (isFavorite && booksFiltered.length > 0) {
       handleSetBooksFiltered(booksFiltered.filter((book) => book.isFavorite));
     }
   }, [categories, booksFiltered]);

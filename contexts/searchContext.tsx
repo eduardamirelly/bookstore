@@ -29,7 +29,7 @@ export function SearchContextProvider({ children }: SearchContextProviderProps) 
     dispatch(loadCategoriesRequest());
   }, []);
 
-  const books = useReduxSelector((state) => state.books.data);
+  const books = useReduxSelector((state) => state.books.data) || [];
 
   const [booksFiltered, setBooksFiltered] = useState<Book[]>(books);
   const [search, setSearch] = useState('');

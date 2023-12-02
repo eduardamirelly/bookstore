@@ -5,6 +5,7 @@ import { TextXSmall } from '../../../../styles/Texts/TextXSmall';
 import { TitleH2 } from '../../../../styles/Titles/TitleH2';
 import { Carousel } from './components/Carousel';
 import { BannerDash } from './styles';
+import { Loading } from '../../../Loading';
 
 export const TrendingBooksSection = () => {
   const books = useReduxSelector((state) => state.books.data);
@@ -38,7 +39,8 @@ export const TrendingBooksSection = () => {
         {books.length > 0 && books.filter((book) => book.isInTrending) ? (
           <Carousel sliders={books.filter((book) => book.isInTrending)} />
         ) : (
-          <div>Carregando...</div>
+          // <div>Carregando...</div>
+          <Loading />
         )}
       </BannerDash>
     </Box>

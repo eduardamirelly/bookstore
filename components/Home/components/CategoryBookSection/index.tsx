@@ -5,6 +5,7 @@ import { Book } from '../../../../store/@types/books';
 import { Box } from '../../../../styles/Box';
 import { TitleH2 } from '../../../../styles/Titles/TitleH2';
 import { CarouselAutoplay } from './components/CarouselAutoplay';
+import { Loading } from '../../../Loading';
 
 interface CategoryBookProps {
   category: string;
@@ -60,10 +61,10 @@ export const CategoryBookSection: React.FC<CategoryBookProps> = ({
           booksFiltered.length > 0 ? (
             <CarouselAutoplay sliders={booksFiltered} />
           ) : (
-            <div>Não tem livros disponível para essa categoria...</div>
+            <div>There are no books available for this category...</div>
           )
         ) : (
-          <div>Carregando...</div>
+          <Loading cssSvg={{ width: '3rem' }} />
         )}
       </Box>
     </Box>

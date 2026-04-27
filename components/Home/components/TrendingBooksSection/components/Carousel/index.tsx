@@ -1,6 +1,6 @@
 import { BookCover } from '../../../../../BookCover';
 
-import { Autoplay } from 'swiper';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Book } from '../../../../../../store/@types/books';

@@ -3,7 +3,7 @@ import { AxiosResponse } from 'axios';
 import { call, put, takeLatest } from 'redux-saga/effects';
 
 import api from '../../services/api';
-import Category from '../@types/categories';
+import { Category } from '../@types/categories';
 
 import { loadCategoriesFailure, loadCategoriesRequest, loadCategoriesSuccess } from '../features/categories';
 

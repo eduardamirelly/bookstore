@@ -9,7 +9,7 @@ import React from 'react';
 
 interface InputSearchProps {
   placeholder?: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (value: string) => void;
   onClick?: () => void;
 }
 
@@ -25,7 +25,7 @@ export const InputSearch = ({
         name="search"
         id="search"
         placeholder={placeholder}
-        onChange={onChange}
+        onChange={(e) => onChange(e.target.value)}
       />
       <AfterBlock />
 

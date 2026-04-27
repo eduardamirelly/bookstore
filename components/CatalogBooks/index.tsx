@@ -12,9 +12,7 @@ interface CatalogBooksProps {
   isFavorite: boolean;
 }
 
-export const CatalogBooks: React.FC<CatalogBooksProps> = ({
-  isFavorite,
-}) => {
+export const CatalogBooks: React.FC<CatalogBooksProps> = ({ isFavorite }) => {
   const categories = useReduxSelector((state) => state.categories.data);
   const [optionsCategory, setOptionsCategory] = useState<string[]>([]);
 
@@ -41,11 +39,7 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
   }, [categories, booksFiltered]);
 
   return (
-    <Box
-      direction="column"
-      justify="center"
-      align="center"
-    >
+    <Box direction="column" justify="center" align="center">
       <Box
         justify="center"
         css={{
@@ -53,7 +47,7 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
           '@md': { width: '535px' },
         }}
       >
-        <InputSearch onChange={(e) => handleInputText(e.target.value)} />
+        <InputSearch onChange={handleInputText} />
       </Box>
 
       <Filters valueSearch={search}>
@@ -63,8 +57,19 @@ export const CatalogBooks: React.FC<CatalogBooksProps> = ({
           collection={optionsCategory}
           css={{ width: '308px' }}
         />
-        <SelectInput onSelect={() => {}} selectInitial="Sort By" collection={['Book title']} css={{ width: '168px' }} />
-        <SelectInput onSelect={handleOrderBy} isRequired selectInitial="Order By" collection={['ASC', 'DESC']} css={{ width: '168px' }} />
+        <SelectInput
+          onSelect={() => {}}
+          selectInitial="Sort By"
+          collection={['Book title']}
+          css={{ width: '168px' }}
+        />
+        <SelectInput
+          onSelect={handleOrderBy}
+          isRequired
+          selectInitial="Order By"
+          collection={['ASC', 'DESC']}
+          css={{ width: '168px' }}
+        />
       </Filters>
 
       <Box
